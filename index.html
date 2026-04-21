@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChiefDelphi 电气技术卡片库</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+        
+        :root {
+            --bg: #0f1117;
+            --bg-elevated: #161b22;
+            --bg-card: #1c2128;
+            --bg-card-hover: #22262d;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --accent: #58a6ff;
+            --accent-soft: rgba(88,166,255,0.15);
+            --danger: #f85149;
+            --warning: #d29922;
+            --success: #3fb950;
+            --radius: 14px;
+            --radius-sm: 8px;
+            --shadow: 0 4px 24px rgba(0,0,0,0.4);
+            --shadow-hover: 0 8px 32px rgba(0,0,0,0.5);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15,17,23,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 24px;
+        }
+        
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-icon {
+            width: 40px; height: 40px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.3em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo-text p {
+            font-size: 0.75em;
+            color: var(--text-muted);
+            margin-top: -2px;
+        }
+        
+        .controls {
+            flex: 1;
+            display: flex;
+            gap: 12px;
+            min-width: 280px;
+        }
+        
+        .search-box {
+            flex: 1;
+            position: relative;
+            max-width: 400px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 0.95em;
+            outline: none;
+            transition: all 0.2s;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+        
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9em;
+            opacity: 0.6;
+        }
+        
+        .filter-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 12px 24px;
+        }
+        
+        .filter-tag {
+            padding: 6px 14px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.82em;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+        
+        .filter-tag:hover, .filter-tag.active {
+            background: rgba(88,166,255,0.12);
+            border-color: var(--accent);
+            color: #79c0ff;
+        }
+        
+        .filter-tag .count {
+            margin-left: 4px;
+            opacity: 0.7;
+        }
+        
+        .stats-bar {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            gap: 24px;
+            font-size: 0.85em;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .stat-value {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        .section-title {
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin: 32px 0 16px;
+            padding-left: 4px;
+        }
+        
+        .section-title:first-of-type {
+            margin-top: 8px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            .card-grid { grid-template-columns: 1fr; }
+            .header-inner { flex-direction: column; align-items: stretch; }
+            .controls { width: 100%; }
+        }
+        
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 0;
+            transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(88,166,255,0.3);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+        
+        .card.expanded {
+            grid-column: 1 / -1;
+            cursor: default;
+        }
+        
+        .card-header {
+            padding: 20px 20px 16px;
+        }
+        
+        .card-badges {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.72em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+        
+        .badge-power { background: rgba(248,81,73,0.15); color: #ff7b72; }
+        .badge-can { background: rgba(88,166,255,0.15); color: #79c0ff; }
+        .badge-motor { background: rgba(63,185,80,0.15); color: #56d364; }
+        .badge-radio { background: rgba(210,153,34,0.15); color: #e3b341; }
+        .badge-layout { background: rgba(139,148,158,0.15); color: #b1b8c0; }
+        .badge-trouble { background: rgba(188,140,255,0.15); color: #d2a8ff; }
+        .badge-sensor { background: rgba(56,189,248,0.15); color: #7dd3fc; }
+        .badge-general { background: rgba(110,118,129,0.15); color: #8b949e; }
+        
+        .card-title {
+            font-size: 1.15em;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        
+        .card-meta {
+            display: flex;
+            gap: 14px;
+            font-size: 0.82em;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+        
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .card-preview {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 0.92em;
+            line-height: 1.7;
+        }
+        
+        .card-preview p {
+            margin-bottom: 0.6em;
+        }
+        
+        .card-footer {
+            margin-top: auto;
+            padding: 12px 20px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            font-size: 0.82em;
+        }
+        
+        .card-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .card-tag {
+            padding: 2px 8px;
+            background: var(--bg-elevated);
+            border-radius: 4px;
+            font-size: 0.78em;
+            color: var(--text-muted);
+        }
+        
+        .expand-hint {
+            color: var(--accent);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .card.expanded .expand-hint::after {
+            content: "收起 ▲";
+        }
+        
+        .expand-hint::after {
+            content: "展开 ▼";
+        }
+        
+        .card-detail {
+            display: none;
+            padding: 0 20px 24px;
+            border-top: 1px solid var(--border);
+            margin-top: 16px;
+        }
+        
+        .card.expanded .card-detail {
+            display: block;
+        }
+        
+        .detail-section {
+            margin-top: 20px;
+        }
+        
+        .detail-section h4 {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .detail-section h4::before {
+            content: "";
+            width: 4px;
+            height: 16px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .detail-section p, .detail-section ul {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            padding-left: 0;
+        }
+        
+        .detail-section ul {
+            padding-left: 1.5em;
+        }
+        
+        .detail-section li {
+            margin: 0.5em 0;
+        }
+        
+        .link-external {
+            color: var(--accent);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        .link-external:hover {
+            text-decoration: underline;
+        }
+        
+        .card.hidden {
+            display: none;
+        }
+        
+        .page-footer {
+            max-width: 1400px;
+            margin: 48px auto 24px;
+            padding: 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.82em;
+            border-top: 1px solid var(--border);
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-icon">⚡</div>
+                <div class="logo-text">
+                    <h1>ChiefDelphi 电气技术卡片库</h1>
+                    <p>FRC 电气版块热门帖子 · 自动更新</p>
+                </div>
+            </div>
+            <div class="controls">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索关键词..." autocomplete="off">
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="stats-bar">
+        <div class="stat-item">📦 <span class="stat-value" id="totalCount">15</span> 张卡片</div>
+        <div class="stat-item">🏷️ <span class="stat-value">5</span> 个分类</div>
+        <div class="stat-item">📅 更新于 2026-04-21 16:03</div>
+        <div class="stat-item">🔌 <a href="https://www.chiefdelphi.com/" target="_blank" style="color:var(--text-muted);">ChiefDelphi.com</a></div>
+    </div>
+    
+    <div class="filter-tags">
+<span class="filter-tag active" data-filter="all">全部</span>
+        <span class="filter-tag" data-filter="can">CAN <span class="count">10</span></span>
+        <span class="filter-tag" data-filter="power">电源 <span class="count">5</span></span>
+        <span class="filter-tag" data-filter="trouble">故障 <span class="count">2</span></span>
+        <span class="filter-tag" data-filter="motor">电机 <span class="count">1</span></span>
+        <span class="filter-tag" data-filter="general">综合 <span class="count">1</span></span>
+
+    </div>
+
+    <main class="main">
+        
+        <h2 class="section-title">🔥 热门帖子</h2>
+        <div class="card-grid" id="cardGrid">
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">Artsy Robot Photos</h3>
+        <div class="card-meta">
+            <span>💬 1315 回复</span>
+            <span>👁️ 141449 浏览</span>
+            <span>❤️ 15366 赞</span>
+            <span>📅 2020-01-31</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Since I like to take “artsy” robot photos during the build season, I figured I’d make a thread where people can post theirs too.  No real rules for this thread, just post something that you think look...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/artsy-robot-photos/375488" target="_blank" class="link-external">https://www.chiefdelphi.com/t/artsy-robot-photos/375488</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">FIRST hot takes</h3>
+        <div class="card-meta">
+            <span>💬 1256 回复</span>
+            <span>👁️ 61664 浏览</span>
+            <span>❤️ 11636 赞</span>
+            <span>📅 2025-05-19</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>As my contribution to Summer CD, post your hot takes on FIRST. Can be FLL, FTC, FRC, FGC. 
+Rules: 
+
+post actual hot takes. Not popular opinions. Also, try to explain your reason behind your takes.
+Don...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/first-hot-takes/502031" target="_blank" class="link-external">https://www.chiefdelphi.com/t/first-hot-takes/502031</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="power can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-power">电源</span><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">QuestNav: The Best Robot Pose Tracking System in FRC</h3>
+        <div class="card-meta">
+            <span>💬 426 回复</span>
+            <span>👁️ 44876 浏览</span>
+            <span>❤️ 1255 赞</span>
+            <span>📅 2024-12-05</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>QuestNav is an entirely new approach to robot pose tracking that is more reliable and robust than anything currently available in FRC. This project enables streaming Oculus VR headset pose information...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/questnav-the-best-robot-pose-tracking-system-in-frc/476083" target="_blank" class="link-external">https://www.chiefdelphi.com/t/questnav-the-best-robot-pose-tracking-system-in-frc/476083</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">电源</span><span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="power trouble" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-power">电源</span><span class="badge badge-trouble">故障</span></div>
+        <h3 class="card-title">Team 180’s battery tracking app</h3>
+        <div class="card-meta">
+            <span>💬 67 回复</span>
+            <span>👁️ 3268 浏览</span>
+            <span>❤️ 98 赞</span>
+            <span>📅 2026-03-15</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Hey CD, 
+We built a mobile web app to track our 12V 18Ah SLA battery fleet during competition and wanted to share it in case it’s useful to other teams. 
+The problem: we were doing battery tracking on...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/team-180-s-battery-tracking-app/516447" target="_blank" class="link-external">https://www.chiefdelphi.com/t/team-180-s-battery-tracking-app/516447</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">电源</span><span class="card-tag">故障</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">Can you explain why our alliance got 50 penalty point? [Pin Count Discussion]</h3>
+        <div class="card-meta">
+            <span>💬 64 回复</span>
+            <span>👁️ 3285 浏览</span>
+            <span>❤️ 89 赞</span>
+            <span>📅 2026-04-12</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>https://youtu.be/Ky9TOZFoOXU?si=ho6ZDkiMF2tV7t9L</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/can-you-explain-why-our-alliance-got-50-penalty-point-pin-count-discussion/518374" target="_blank" class="link-external">https://www.chiefdelphi.com/t/can-you-explain-why-our-alliance-got-50-penalty-point-pin-count-discussion/518374</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">Limitations on sponsors for an individual team</h3>
+        <div class="card-meta">
+            <span>💬 16 回复</span>
+            <span>👁️ 1306 浏览</span>
+            <span>❤️ 145 赞</span>
+            <span>📅 2025-09-18</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Does FIRST impose any restrictions on what organizations / companies an individual team can get money from? Our team seems to have the opportunity to get a donation for out non-profit from something a...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/limitations-on-sponsors-for-an-individual-team/506401" target="_blank" class="link-external">https://www.chiefdelphi.com/t/limitations-on-sponsors-for-an-individual-team/506401</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="motor trouble" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-motor">电机</span><span class="badge badge-trouble">故障</span></div>
+        <h3 class="card-title">931 Needs Help Obtaining Krakens</h3>
+        <div class="card-meta">
+            <span>💬 21 回复</span>
+            <span>👁️ 1410 浏览</span>
+            <span>❤️ 52 赞</span>
+            <span>📅 2026-02-13</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p> 
+931 has recently discovered that 8 Kraken X60s will be needed to complete our robot. A GoFundMe has been started but we are also looking to see if anyone has motors available for donation/borrowing…</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/931-needs-help-obtaining-krakens/514280" target="_blank" class="link-external">https://www.chiefdelphi.com/t/931-needs-help-obtaining-krakens/514280</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">电机</span><span class="card-tag">故障</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="power" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-power">电源</span></div>
+        <h3 class="card-title">Best teams to visit in PITS for electrical at Worlds 2026?</h3>
+        <div class="card-meta">
+            <span>💬 14 回复</span>
+            <span>👁️ 954 浏览</span>
+            <span>❤️ 44 赞</span>
+            <span>📅 2026-04-20</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>I’m heading to Worlds this year and one of my goals is to walk the pits and learn as much as possible about how other teams approach their electrical systems. I’m specifically interested in: 
+•	Teams ...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/best-teams-to-visit-in-pits-for-electrical-at-worlds-2026/518925" target="_blank" class="link-external">https://www.chiefdelphi.com/t/best-teams-to-visit-in-pits-for-electrical-at-worlds-2026/518925</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">电源</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">What types of fundraising dose your team do for frc</h3>
+        <div class="card-meta">
+            <span>💬 13 回复</span>
+            <span>👁️ 1390 浏览</span>
+            <span>❤️ 25 赞</span>
+            <span>📅 2024-04-03</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>We are looking for ways to raise funds for our team we have looked at grants and applied but what fundraising can we do while waiting for grants to go through?</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/what-types-of-fundraising-dose-your-team-do-for-frc/461176" target="_blank" class="link-external">https://www.chiefdelphi.com/t/what-types-of-fundraising-dose-your-team-do-for-frc/461176</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">PizzaByte 2.0 GoFund Me</h3>
+        <div class="card-meta">
+            <span>💬 14 回复</span>
+            <span>👁️ 741 浏览</span>
+            <span>❤️ 24 赞</span>
+            <span>📅 2025-04-11</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Hey there! I’m reaching out to share some exciting news. Pizzabyte 2.0 just qualified for the FIRST Championship, making history for Panama and Central America! Your support, no matter how small, can ...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/pizzabyte-2-0-gofund-me/498924" target="_blank" class="link-external">https://www.chiefdelphi.com/t/pizzabyte-2-0-gofund-me/498924</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="power" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-power">电源</span></div>
+        <h3 class="card-title">We might not make it to regionals this year</h3>
+        <div class="card-meta">
+            <span>💬 5 回复</span>
+            <span>👁️ 845 浏览</span>
+            <span>❤️ 30 赞</span>
+            <span>📅 2025-11-03</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Hey everyone, 
+This season has been extremely challenging for us financially. 
+Due to the current economic situation in Turkey and recent sponsor withdrawals, we’re struggling to cover our regional re...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/we-might-not-make-it-to-regionals-this-year/507805" target="_blank" class="link-external">https://www.chiefdelphi.com/t/we-might-not-make-it-to-regionals-this-year/507805</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">电源</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">Failure to collect the registration fee</h3>
+        <div class="card-meta">
+            <span>💬 10 回复</span>
+            <span>👁️ 658 浏览</span>
+            <span>❤️ 18 赞</span>
+            <span>📅 2025-10-25</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>It looks like we won’t be able to raise $6,300. If we don’t participate this season, how much would it cost to build a robot for the off-season, how much is the off-season fee, and can we keep our roo...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/failure-to-collect-the-registration-fee/507526" target="_blank" class="link-external">https://www.chiefdelphi.com/t/failure-to-collect-the-registration-fee/507526</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">Can Google works for Benevity?!</h3>
+        <div class="card-meta">
+            <span>💬 13 回复</span>
+            <span>👁️ 1060 浏览</span>
+            <span>❤️ 7 赞</span>
+            <span>📅 2025-04-27</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Hello everyone! 
+My team has managed to get a Google employee to act as a mentor, and we are committed to applying the benefit of donations through Benevity (a donation platform for social causes). I ...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/can-google-works-for-benevity/500632" target="_blank" class="link-external">https://www.chiefdelphi.com/t/can-google-works-for-benevity/500632</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="general" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-general">综合</span></div>
+        <h3 class="card-title">Fire at Davis Senior High School (Citrus Circuits)</h3>
+        <div class="card-meta">
+            <span>💬 3 回复</span>
+            <span>👁️ 310 浏览</span>
+            <span>❤️ 28 赞</span>
+            <span>📅 2026-04-21</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Feel free to move this into a different thread if another is made. 
+Hope everyone and everything is okay.</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/fire-at-davis-senior-high-school-citrus-circuits/518973" target="_blank" class="link-external">https://www.chiefdelphi.com/t/fire-at-davis-senior-high-school-citrus-circuits/518973</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">综合</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="power can" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-power">电源</span><span class="badge badge-can">CAN</span></div>
+        <h3 class="card-title">Fundraising that can be done as an individual</h3>
+        <div class="card-meta">
+            <span>💬 8 回复</span>
+            <span>👁️ 575 浏览</span>
+            <span>❤️ 8 赞</span>
+            <span>📅 2024-03-19</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>My FTC team needs a real tile floor. Currently we have a mat that although it works well, it’s only good for teleop drive practice. Because of how the floor is measured, it doesn’t have any spike mark...</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>摘要</h4>
+            <p>该帖子在 ChiefDelphi 电气版块引发讨论。点击查看原帖了解详细技术内容。</p>
+        </div>
+        <div class="detail-section">
+            <h4>原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/fundraising-that-can-be-done-as-an-individual/459268" target="_blank" class="link-external">https://www.chiefdelphi.com/t/fundraising-that-can-be-done-as-an-individual/459268</a></p>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">电源</span><span class="card-tag">CAN</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+        </div>
+        
+    </main>
+    
+    <footer class="page-footer">
+        <p>🖤 Kimi Claw 自动生成 · ChiefDelphi 电气版块 · FRC</p>
+        <p style="margin-top:4px;color:var(--text-muted);">Even if the world forgets, I'll remember for you.</p>
+    </footer>
+    
+    <script>
+        function toggleCard(card) {
+            const wasExpanded = card.classList.contains('expanded');
+            document.querySelectorAll('.card.expanded').forEach(c => c.classList.remove('expanded'));
+            if (!wasExpanded) {
+                card.classList.add('expanded');
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+        
+        const filterTags = document.querySelectorAll('.filter-tag');
+        const allCards = document.querySelectorAll('.card');
+        const totalCountEl = document.getElementById('totalCount');
+        
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                filterTags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                
+                const filter = tag.dataset.filter;
+                let visible = 0;
+                
+                allCards.forEach(card => {
+                    const tags = card.dataset.tags || '';
+                    if (filter === 'all' || tags.includes(filter)) {
+                        card.classList.remove('hidden');
+                        visible++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                totalCountEl.textContent = visible;
+            });
+        });
+        
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            let visible = 0;
+            
+            allCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.classList.remove('hidden');
+                    visible++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            
+            totalCountEl.textContent = visible;
+        });
+    </script>
+</body>
+</html>
