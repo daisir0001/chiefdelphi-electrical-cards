@@ -8,23 +8,23 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
         
         :root {
-            --bg: #0f1117;
-            --bg-elevated: #161b22;
-            --bg-card: #1c2128;
-            --bg-card-hover: #22262d;
-            --border: #30363d;
+            --bg: #0a0c10;
+            --bg-elevated: #11141a;
+            --bg-card: #161922;
+            --bg-card-hover: #1c1f2a;
+            --border: #252a33;
             --text-primary: #e6edf3;
             --text-secondary: #8b949e;
-            --text-muted: #6e7681;
+            --text-muted: #5a6068;
             --accent: #58a6ff;
-            --accent-soft: rgba(88,166,255,0.15);
+            --accent-soft: rgba(88,166,255,0.12);
             --danger: #f85149;
             --warning: #d29922;
             --success: #3fb950;
             --radius: 14px;
             --radius-sm: 8px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.4);
-            --shadow-hover: 0 8px 32px rgba(0,0,0,0.5);
+            --shadow: 0 4px 24px rgba(0,0,0,0.5);
+            --shadow-hover: 0 8px 32px rgba(0,0,0,0.6);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,10 +41,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(15,17,23,0.85);
+            background: rgba(10,12,16,0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: 20px 24px;
+            padding: 16px 20px;
         }
         
         .header-inner {
@@ -52,32 +52,32 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         
         .logo-icon {
-            width: 40px; height: 40px;
+            width: 36px; height: 36px;
             background: var(--accent);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
         }
         
         .logo-text h1 {
-            font-size: 1.3em;
+            font-size: 1.15em;
             font-weight: 700;
             letter-spacing: -0.02em;
         }
         
         .logo-text p {
-            font-size: 0.75em;
+            font-size: 0.72em;
             color: var(--text-muted);
             margin-top: -2px;
         }
@@ -85,24 +85,25 @@
         .controls {
             flex: 1;
             display: flex;
-            gap: 12px;
-            min-width: 280px;
+            gap: 10px;
+            min-width: 260px;
+            align-items: center;
         }
         
         .search-box {
             flex: 1;
             position: relative;
-            max-width: 400px;
+            max-width: 360px;
         }
         
         .search-box input {
             width: 100%;
-            padding: 10px 16px 10px 40px;
+            padding: 9px 14px 9px 38px;
             background: var(--bg-elevated);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
             color: var(--text-primary);
-            font-size: 0.95em;
+            font-size: 0.9em;
             outline: none;
             transition: all 0.2s;
         }
@@ -115,29 +116,45 @@
         .search-box::before {
             content: "🔍";
             position: absolute;
-            left: 12px;
+            left: 11px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 0.9em;
-            opacity: 0.6;
+            font-size: 0.85em;
+            opacity: 0.5;
+        }
+        
+        .clear-btn {
+            padding: 8px 14px;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 0.82em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .clear-btn:hover {
+            border-color: var(--danger);
+            color: var(--danger);
         }
         
         .filter-tags {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             flex-wrap: wrap;
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 12px 24px;
+            padding: 10px 20px;
         }
         
         .filter-tag {
-            padding: 6px 14px;
+            padding: 5px 12px;
             background: var(--bg-elevated);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 0.82em;
+            border-radius: 16px;
+            font-size: 0.78em;
             color: var(--text-secondary);
             cursor: pointer;
             transition: all 0.2s;
@@ -145,31 +162,32 @@
         }
         
         .filter-tag:hover, .filter-tag.active {
-            background: rgba(88,166,255,0.12);
+            background: rgba(88,166,255,0.1);
             border-color: var(--accent);
             color: #79c0ff;
         }
         
         .filter-tag .count {
-            margin-left: 4px;
-            opacity: 0.7;
+            margin-left: 3px;
+            opacity: 0.6;
         }
         
         .stats-bar {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 16px 24px;
+            padding: 12px 20px;
             display: flex;
-            gap: 24px;
-            font-size: 0.85em;
+            gap: 20px;
+            font-size: 0.8em;
             color: var(--text-muted);
             border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
         }
         
         .stat-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
         }
         
         .stat-value {
@@ -180,27 +198,27 @@
         .main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 24px;
+            padding: 20px;
         }
         
         .section-title {
-            font-size: 0.85em;
+            font-size: 0.82em;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--text-muted);
-            margin: 32px 0 16px;
+            margin: 28px 0 14px;
             padding-left: 4px;
         }
         
         .section-title:first-of-type {
-            margin-top: 8px;
+            margin-top: 4px;
         }
         
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 16px;
         }
         
         @media (max-width: 480px) {
@@ -223,9 +241,9 @@
         
         .card:hover {
             background: var(--bg-card-hover);
-            border-color: rgba(88,166,255,0.3);
+            border-color: rgba(88,166,255,0.25);
             box-shadow: var(--shadow-hover);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
         
         .card.expanded {
@@ -234,45 +252,51 @@
         }
         
         .card-header {
-            padding: 20px 20px 16px;
+            padding: 18px 18px 14px;
         }
         
         .card-badges {
             display: flex;
-            gap: 6px;
-            margin-bottom: 12px;
+            gap: 5px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
         }
         
         .badge {
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.72em;
+            padding: 2px 9px;
+            border-radius: 10px;
+            font-size: 0.7em;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: transform 0.15s;
         }
         
-        .badge-power { background: rgba(248,81,73,0.15); color: #ff7b72; }
-        .badge-can { background: rgba(88,166,255,0.15); color: #79c0ff; }
-        .badge-motor { background: rgba(63,185,80,0.15); color: #56d364; }
-        .badge-radio { background: rgba(210,153,34,0.15); color: #e3b341; }
-        .badge-layout { background: rgba(139,148,158,0.15); color: #b1b8c0; }
-        .badge-trouble { background: rgba(188,140,255,0.15); color: #d2a8ff; }
-        .badge-sensor { background: rgba(56,189,248,0.15); color: #7dd3fc; }
-        .badge-general { background: rgba(110,118,129,0.15); color: #8b949e; }
+        .badge:hover { transform: scale(1.05); }
+        
+        .badge-power { background: rgba(248,81,73,0.12); color: #ff7b72; }
+        .badge-can { background: rgba(88,166,255,0.12); color: #79c0ff; }
+        .badge-motor { background: rgba(63,185,80,0.12); color: #56d364; }
+        .badge-radio { background: rgba(210,153,34,0.12); color: #e3b341; }
+        .badge-layout { background: rgba(139,148,158,0.12); color: #b1b8c0; }
+        .badge-trouble { background: rgba(188,140,255,0.12); color: #d2a8ff; }
+        .badge-sensor { background: rgba(56,189,248,0.12); color: #7dd3fc; }
+        .badge-control { background: rgba(255,166,87,0.12); color: #ffa657; }
+        .badge-general { background: rgba(110,118,129,0.12); color: #8b949e; }
         
         .card-title {
-            font-size: 1.15em;
+            font-size: 1.08em;
             font-weight: 700;
             line-height: 1.4;
             margin-bottom: 8px;
+            color: var(--text-primary);
         }
         
         .card-meta {
             display: flex;
-            gap: 14px;
-            font-size: 0.82em;
+            gap: 12px;
+            font-size: 0.78em;
             color: var(--text-muted);
             flex-wrap: wrap;
         }
@@ -280,50 +304,48 @@
         .card-meta span {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
         }
         
         .card-preview {
-            padding: 0 20px 20px;
+            padding: 0 18px 16px;
             color: var(--text-secondary);
-            font-size: 0.92em;
+            font-size: 0.88em;
             line-height: 1.7;
         }
         
         .card-preview p {
-            margin-bottom: 0.6em;
+            margin-bottom: 0.5em;
         }
         
         .card-footer {
             margin-top: auto;
-            padding: 12px 20px 16px;
+            padding: 10px 18px 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid var(--border);
-            font-size: 0.82em;
+            font-size: 0.78em;
         }
         
         .card-tags {
             display: flex;
-            gap: 6px;
+            gap: 5px;
             flex-wrap: wrap;
         }
         
         .card-tag {
-            padding: 2px 8px;
+            padding: 2px 7px;
             background: var(--bg-elevated);
             border-radius: 4px;
-            font-size: 0.78em;
+            font-size: 0.75em;
             color: var(--text-muted);
         }
         
         .expand-hint {
             color: var(--accent);
             font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 4px;
+            font-size: 0.82em;
         }
         
         .card.expanded .expand-hint::after {
@@ -336,9 +358,9 @@
         
         .card-detail {
             display: none;
-            padding: 0 20px 24px;
+            padding: 0 18px 20px;
             border-top: 1px solid var(--border);
-            margin-top: 16px;
+            margin-top: 14px;
         }
         
         .card.expanded .card-detail {
@@ -346,45 +368,222 @@
         }
         
         .detail-section {
-            margin-top: 20px;
+            margin-top: 18px;
         }
         
         .detail-section h4 {
-            font-size: 0.95em;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .detail-section h4::before {
+            content: "";
+            width: 3px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        .detail-section p {
+            color: var(--text-secondary);
+            font-size: 0.86em;
+            line-height: 1.7;
+        }
+        
+        .posts-section {
+            margin-top: 18px;
+        }
+        
+        .posts-section h4 {
+            font-size: 0.9em;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
         
-        .detail-section h4::before {
+        .posts-section h4::before {
             content: "";
-            width: 4px;
-            height: 16px;
-            background: var(--accent);
+            width: 3px;
+            height: 14px;
+            background: var(--success);
             border-radius: 2px;
         }
         
-        .detail-section p, .detail-section ul {
+        .post-item {
+            background: var(--bg-elevated);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border);
+        }
+        
+        .post-op {
+            border-left: 3px solid var(--accent);
+        }
+        
+        .post-meta {
+            font-size: 0.75em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        
+        .post-text {
+            font-size: 0.84em;
             color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .post-more {
+            font-size: 0.78em;
+            color: var(--text-muted);
+            margin-top: 6px;
+            font-style: italic;
+        }
+        
+        .analysis-section {
+            margin-top: 18px;
+        }
+        
+        .analysis-section h4 {
             font-size: 0.9em;
-            padding-left: 0;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         
-        .detail-section ul {
-            padding-left: 1.5em;
+        .analysis-section h4::before {
+            content: "";
+            width: 3px;
+            height: 14px;
+            background: var(--warning);
+            border-radius: 2px;
         }
         
-        .detail-section li {
-            margin: 0.5em 0;
+        .analysis-placeholder {
+            background: var(--bg-elevated);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            border: 1px dashed var(--border);
+            color: var(--text-muted);
+            font-size: 0.85em;
+        }
+        
+        /* 反馈栏 */
+        .feedback-bar {
+            margin-top: 18px;
+            padding: 12px;
+            background: var(--bg-elevated);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+        }
+        
+        .feedback-options {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .fb-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 7px 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        .fb-btn:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+        
+        .fb-btn.active {
+            background: rgba(88,166,255,0.15);
+            border-color: var(--accent);
+            color: #79c0ff;
+        }
+        
+        .fb-btn.active.fb-hide {
+            background: rgba(248,81,73,0.15);
+            border-color: var(--danger);
+            color: #ff7b72;
+        }
+        
+        .fb-btn.active.fb-hide-tag {
+            background: rgba(210,153,34,0.15);
+            border-color: var(--warning);
+            color: #e3b341;
+        }
+        
+        .fb-copy-btn {
+            margin-top: 10px;
+            width: 100%;
+            padding: 10px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        
+        .fb-copy-btn:hover {
+            background: #79c0ff;
+            transform: translateY(-1px);
+        }
+        
+        .fb-copy-btn.copied {
+            background: var(--success);
+        }
+        
+        .tag-menu {
+            margin-top: 8px;
+            padding: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+        }
+        
+        .tag-menu-item {
+            padding: 6px 10px;
+            font-size: 0.82em;
+            color: var(--text-secondary);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.15s;
+        }
+        
+        .tag-menu-item:hover {
+            background: var(--accent-soft);
+            color: var(--accent);
         }
         
         .link-external {
             color: var(--accent);
             text-decoration: none;
             word-break: break-all;
+            font-size: 0.84em;
         }
         
         .link-external:hover {
@@ -395,19 +594,45 @@
             display: none;
         }
         
+        .card.dimmed {
+            opacity: 0.4;
+        }
+        
         .page-footer {
             max-width: 1400px;
-            margin: 48px auto 24px;
-            padding: 24px;
+            margin: 40px auto 20px;
+            padding: 20px;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.82em;
+            font-size: 0.78em;
             border-top: 1px solid var(--border);
         }
         
-        ::-webkit-scrollbar { width: 8px; }
+        .feedback-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px 20px;
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+        
+        .feedback-toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        
+        ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
     </style>
 </head>
@@ -418,586 +643,687 @@
                 <div class="logo-icon">⚡</div>
                 <div class="logo-text">
                     <h1>ChiefDelphi 电气技术卡片库</h1>
-                    <p>FRC 电气版块热门帖子 · 自动更新</p>
+                    <p>FRC 电气 & 电子技术 · 聚焦热门讨论</p>
                 </div>
             </div>
             <div class="controls">
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="搜索关键词..." autocomplete="off">
                 </div>
+                <button class="clear-btn" onclick="clearAllFeedback()" title="清除所有反馈状态">🗑️ 清除</button>
             </div>
         </div>
     </header>
     
     <div class="stats-bar">
-        <div class="stat-item">📦 <span class="stat-value" id="totalCount">15</span> 张卡片</div>
-        <div class="stat-item">🏷️ <span class="stat-value">6</span> 个分类</div>
-        <div class="stat-item">📅 更新于 2026-04-22 03:54</div>
+        <div class="stat-item">📦 <span class="stat-value" id="totalCount">10</span> 张卡片</div>
+        <div class="stat-item">🏷️ <span class="stat-value">3</span> 个分类</div>
+        <div class="stat-item">📅 更新于 2026-04-22 14:44</div>
         <div class="stat-item">🔌 <a href="https://www.chiefdelphi.com/" target="_blank" style="color:var(--text-muted);">ChiefDelphi.com</a></div>
     </div>
     
     <div class="filter-tags">
 <span class="filter-tag active" data-filter="all">全部</span>
-        <span class="filter-tag" data-filter="can">CAN <span class="count">7</span></span>
-        <span class="filter-tag" data-filter="power">电源 <span class="count">6</span></span>
-        <span class="filter-tag" data-filter="motor">电机 <span class="count">2</span></span>
-        <span class="filter-tag" data-filter="trouble">故障 <span class="count">2</span></span>
-        <span class="filter-tag" data-filter="general">综合 <span class="count">1</span></span>
-        <span class="filter-tag" data-filter="sensor">传感器 <span class="count">1</span></span>
+        <span class="filter-tag" data-filter="sensor">传感器/视觉 <span class="count">5</span></span>
+        <span class="filter-tag" data-filter="power">电源/配电 <span class="count">4</span></span>
+        <span class="filter-tag" data-filter="motor">电机/驱动 <span class="count">2</span></span>
 
     </div>
 
     <main class="main">
         
-        <h2 class="section-title">🔥 热门帖子</h2>
+        <h2 class="section-title">🔥 热门电气帖子</h2>
         <div class="card-grid" id="cardGrid">
 
-<div class="card" data-tags="power motor" onclick="toggleCard(this)">
+<div class="card" data-tags="sensor" data-id="506851" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-power">电源</span><span class="badge badge-motor">电机</span></div>
+        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
+        <h3 class="card-title">Introducing Luma P1, an affordable, high-performance AprilTag smart camera</h3>
+        <div class="card-meta">
+            <span>💬 163 回复</span>
+            <span>👁️ 14573 浏览</span>
+            <span>❤️ 745 赞</span>
+            <span>📅 2025-10-03</span>
+            <span>🔄 最新 8小时前</span>
+        </div>
+    </div>
+    <div class="card-preview">
+        <p>Introducing Luma P1
+I’m excited to announce Luma P1, the first product from Luma Vision. The Luma P1 is an affordable, high-performance AprilTag smart camera designed to lower the barrier of entry to …</p>
+    </div>
+    <div class="card-detail">
+        <div class="detail-section">
+            <h4>📋 摘要</h4>
+            <p>Introducing Luma P1
+I’m excited to announce Luma P1, the first product from Luma Vision. The Luma P1 is an affordable, high-performance AprilTag smart camera designed to lower the barrier of entry to …</p>
+        </div>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 mjansen4857 · 楼主</div><div class="post-text">Introducing Luma P1 I’m excited to announce Luma P1, the first product from Luma Vision . The Luma P1 is an affordable, high-performance AprilTag smart camera designed to lower the barrier of entry to “plug-and-play” AprilTag localization. P1 1920×1440 45.3 KB Features Buck-Boost power stage 3.3V - 22.5V Input range Reverse voltage protection PoE + Weidmuller power input Powered by Raspberry Pi CM</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 nstrike · #2 · 10-03</div><div class="post-text">Thank you!!! POE AND ACTIVE COOLING!!!</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="506851">
+            <p>⚡ 点击卡片查看详细分析...</p>
+        </div>
+    </div>
+    
+        <div class="detail-section">
+            <h4>🔗 原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/introducing-luma-p1-an-affordable-high-performance-apriltag-smart-camera/506851" target="_blank" class="link-external">https://www.chiefdelphi.com/t/introducing-luma-p1-an-affordable-high-performance-apriltag-smart-camera/506851</a></p>
+        </div>
+        
+    <div class="feedback-bar" data-topic-id="506851" data-title="Introducing Luma P1, an affordable, high-performance AprilTag smart camera" data-url="https://www.chiefdelphi.com/t/introducing-luma-p1-an-affordable-high-performance-apriltag-smart-camera/506851">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
+        </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
+    </div>
+    <div class="card-footer">
+        <div class="card-tags">
+            <span class="card-tag">传感器/视觉</span>
+        </div>
+        <span class="expand-hint"></span>
+    </div>
+</div>
+
+<div class="card" data-tags="power motor" data-id="518699" onclick="toggleCard(this)">
+    <div class="card-header">
+        <div class="card-badges"><span class="badge badge-power" data-tag="power">电源/配电</span><span class="badge badge-motor" data-tag="motor">电机/驱动</span></div>
         <h3 class="card-title">Mandated decisions from Joint Design Team in WPILIB</h3>
         <div class="card-meta">
-            <span>💬 56 回复</span>
-            <span>👁️ 2003 浏览</span>
-            <span>❤️ 292 赞</span>
+            <span>💬 58 回复</span>
+            <span>👁️ 2239 浏览</span>
+            <span>❤️ 307 赞</span>
             <span>📅 2026-04-16</span>
+            <span>🔄 最新 5小时前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>In [wpilib] Rename MotorController setThrottle() to setPower() by PeterJohnson · Pull Request #8772 · wpilibsuite/allwpilib · GitHub, the name of the function to set the direct output of a motor is be...</p>
+        <p>In [wpilib] Rename MotorController setThrottle() to setPower() by PeterJohnson · Pull Request #8772 · wpilibsuite/allwpilib · GitHub, the name of the function to set the direct output of a motor is be…</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>（暂无中文摘要）</p>
+            <h4>📋 摘要</h4>
+            <p>In [wpilib] Rename MotorController setThrottle() to setPower() by PeterJohnson · Pull Request #8772 · wpilibsuite/allwpilib · GitHub, the name of the function to set the direct output of a motor is be…</p>
         </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">In [wpilib] Rename MotorController setThrottle() to setPower() by PeterJohnson · Pull Request #8772 · wpilibsuite/allwpilib · GitHub, the name of the function to set the direct output of a motor is be...</p>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 Sam948 · 楼主</div><div class="post-text">In [wpilib] Rename MotorController setThrottle() to setPower() by PeterJohnson · Pull Request #8772 · wpilibsuite/allwpilib · GitHub , the name of the function to set the direct output of a motor is being changed from setThrottle() to setPower() . Despite the community consensus on setThrottle() , the Joint Design Team does not believe it is sufficiently discoverable (it should be noted that the J</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 kn4 · #2 · 5天前</div><div class="post-text">image 500×500 48.2 KB Personally, I think setOutput would be the best option. setPower is physically incorrect, and setThrottle has too much of an association with acceleration rather than speed (and the name will likely be harder to spell; setOutput also phonetically sounds better ( setThrottle has too many doubled "t"s))</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="518699">
+            <p>⚡ 点击卡片查看详细分析...</p>
         </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原帖链接</h4>
+            <h4>🔗 原帖链接</h4>
             <p><a href="https://www.chiefdelphi.com/t/mandated-decisions-from-joint-design-team-in-wpilib/518699" target="_blank" class="link-external">https://www.chiefdelphi.com/t/mandated-decisions-from-joint-design-team-in-wpilib/518699</a></p>
         </div>
+        
+    <div class="feedback-bar" data-topic-id="518699" data-title="Mandated decisions from Joint Design Team in WPILIB" data-url="https://www.chiefdelphi.com/t/mandated-decisions-from-joint-design-team-in-wpilib/518699">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
+        </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'power')">电源/配电</div><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'motor')">电机/驱动</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">电源</span><span class="card-tag">电机</span>
+            <span class="card-tag">电源/配电</span><span class="card-tag">电机/驱动</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="general" onclick="toggleCard(this)">
+<div class="card" data-tags="sensor" data-id="518999" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-general">综合</span></div>
-        <h3 class="card-title">9062 Critical Circuits | 2026 Build Thread & Robots Done Quick</h3>
+        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
+        <h3 class="card-title">Championship Team-Ups</h3>
         <div class="card-meta">
-            <span>💬 47 回复</span>
-            <span>👁️ 5816 浏览</span>
-            <span>❤️ 226 赞</span>
-            <span>📅 2025-11-21</span>
+            <span>💬 63 回复</span>
+            <span>👁️ 1843 浏览</span>
+            <span>❤️ 249 赞</span>
+            <span>📅 2026-04-21</span>
+            <span>🔄 最新 2小时前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>FRC Team 9062: Critical Circuits
-Hi Chief Delphi! Critical Circuits is back with another build thread for the 2026 game Rebuilt presented by Haas. Here are a few goals set out by the team for this bui...</p>
+        <p>With divisions for the FIRST Championship on their way, what matchups and/or team-ups would you like to see at champs? No science here. Just vibes!</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>（暂无中文摘要）</p>
+            <h4>📋 摘要</h4>
+            <p>With divisions for the FIRST Championship on their way, what matchups and/or team-ups would you like to see at champs? No science here. Just vibes!</p>
         </div>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 K.Lavish · 楼主</div><div class="post-text">With divisions for the FIRST Championship on their way, what matchups and/or team-ups would you like to see at champs? No science here. Just vibes!</div></div><div class="post-item"><div class="post-meta">👤 Jow5119 · #2 · 15小时前</div><div class="post-text">1690, 2056 the most impressive turrets I’ve seen thus far I think</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="518999">
+            <p>⚡ 点击卡片查看详细分析...</p>
+        </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">FRC Team 9062: Critical Circuits
-Hi Chief Delphi! Critical Circuits is back with another build thread for the 2026 game Rebuilt presented by Haas. Here are a few goals set out by the team for this bui...</p>
+            <h4>🔗 原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/championship-team-ups/518999" target="_blank" class="link-external">https://www.chiefdelphi.com/t/championship-team-ups/518999</a></p>
         </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/9062-critical-circuits-2026-build-thread-robots-done-quick/508471" target="_blank" class="link-external">https://www.chiefdelphi.com/t/9062-critical-circuits-2026-build-thread-robots-done-quick/508471</a></p>
+        
+    <div class="feedback-bar" data-topic-id="518999" data-title="Championship Team-Ups" data-url="https://www.chiefdelphi.com/t/championship-team-ups/518999">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
         </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">综合</span>
+            <span class="card-tag">传感器/视觉</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="sensor" onclick="toggleCard(this)">
+<div class="card" data-tags="sensor" data-id="518723" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-sensor">传感器</span></div>
+        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
         <h3 class="card-title">Is a 4-Digit Clean Score Possible in 2026/2027 Rebuilt</h3>
         <div class="card-meta">
-            <span>💬 66 回复</span>
-            <span>👁️ 3502 浏览</span>
-            <span>❤️ 151 赞</span>
+            <span>💬 72 回复</span>
+            <span>👁️ 3863 浏览</span>
+            <span>❤️ 158 赞</span>
             <span>📅 2026-04-16</span>
+            <span>🔄 最新 3小时前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>Looking at the maximum possible scoring potential (game pieces + climb) and comparing it to 2018 (which saw a score of over 1000 points with heavy penalties of 785), what are the realistic chances of ...</p>
+        <p>Looking at the maximum possible scoring potential (game pieces + climb) and comparing it to 2018 (which saw a score of over 1000 points with heavy penalties of 785), what are the realistic chances of …</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>（暂无中文摘要）</p>
+            <h4>📋 摘要</h4>
+            <p>Looking at the maximum possible scoring potential (game pieces + climb) and comparing it to 2018 (which saw a score of over 1000 points with heavy penalties of 785), what are the realistic chances of …</p>
         </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Looking at the maximum possible scoring potential (game pieces + climb) and comparing it to 2018 (which saw a score of over 1000 points with heavy penalties of 785), what are the realistic chances of ...</p>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 ChristianBoehm-5413 · 楼主</div><div class="post-text">Looking at the maximum possible scoring potential (game pieces + climb) and comparing it to 2018 (which saw a score of over 1000 points with heavy penalties of 785), what are the realistic chances of a clean 4-digit score this year? Could an alliance of Top 10 teams do this at Champs?</div></div><div class="post-item"><div class="post-meta">👤 MonsTR440 · #2 · 5天前</div><div class="post-text">I think if all goes well and bots don’t break down there could be a 4-digit match in quals at worlds. The hardest part is fuel starvation and defense. 100% will be done in a practice match though.</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="518723">
+            <p>⚡ 点击卡片查看详细分析...</p>
         </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原帖链接</h4>
+            <h4>🔗 原帖链接</h4>
             <p><a href="https://www.chiefdelphi.com/t/is-a-4-digit-clean-score-possible-in-2026-2027-rebuilt/518723" target="_blank" class="link-external">https://www.chiefdelphi.com/t/is-a-4-digit-clean-score-possible-in-2026-2027-rebuilt/518723</a></p>
         </div>
+        
+    <div class="feedback-bar" data-topic-id="518723" data-title="Is a 4-Digit Clean Score Possible in 2026/2027 Rebuilt" data-url="https://www.chiefdelphi.com/t/is-a-4-digit-clean-score-possible-in-2026-2027-rebuilt/518723">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
+        </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">传感器</span>
+            <span class="card-tag">传感器/视觉</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="power trouble" onclick="toggleCard(this)">
+<div class="card" data-tags="power" data-id="507497" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-power">电源</span><span class="badge badge-trouble">故障</span></div>
-        <h3 class="card-title">180队电池追踪App分享<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">Team 180’s battery tracking app</div></h3>
-        <div class="card-meta">
-            <span>💬 68 回复</span>
-            <span>👁️ 3331 浏览</span>
-            <span>❤️ 98 赞</span>
-            <span>📅 2026-03-15</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>180队开发了一款移动端网页应用，用于在比赛期间追踪12V 18Ah SLA电池组。解决了纸质记录或凭记忆管理的痛点。功能包括：记录每场比赛前后电压、电量百分比和内阻（使用CTRE Battery Beak）；前后场分离工作流，一人记录赛前数据，另一人赛后从任何设备补录，Firebase实时同步；每个电池贴QR码，扫码即进入该电池详情页。</p>
-    </div>
-    <div class="card-detail">
-        <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>180队开发了一款移动端网页应用，用于在比赛期间追踪12V 18Ah SLA电池组。解决了纸质记录或凭记忆管理的痛点。功能包括：记录每场比赛前后电压、电量百分比和内阻（使用CTRE Battery Beak）；前后场分离工作流，一人记录赛前数据，另一人赛后从任何设备补录，Firebase实时同步；每个电池贴QR码，扫码即进入该电池详情页。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hey CD, 
-We built a mobile web app to track our 12V 18Ah SLA battery fleet during competition and wanted to share it in case it’s useful to other teams. 
-The problem: we were doing battery tracking on...</p>
-        </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/team-180-s-battery-tracking-app/516447" target="_blank" class="link-external">https://www.chiefdelphi.com/t/team-180-s-battery-tracking-app/516447</a></p>
-        </div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">电源</span><span class="card-tag">故障</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="can" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
-        <h3 class="card-title">单个队伍赞助商限制讨论<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">Limitations on sponsors for an individual team</div></h3>
-        <div class="card-meta">
-            <span>💬 16 回复</span>
-            <span>👁️ 1306 浏览</span>
-            <span>❤️ 145 赞</span>
-            <span>📅 2025-09-18</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>讨论FIRST是否对单个队伍可接受的赞助来源（组织/公司）施加限制。某队伍有机会从其非营利组织获得一笔可能来自'有争议'来源的捐赠，想知道FIRST对此有何规定。</p>
-    </div>
-    <div class="card-detail">
-        <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>讨论FIRST是否对单个队伍可接受的赞助来源（组织/公司）施加限制。某队伍有机会从其非营利组织获得一笔可能来自'有争议'来源的捐赠，想知道FIRST对此有何规定。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Does FIRST impose any restrictions on what organizations / companies an individual team can get money from? Our team seems to have the opportunity to get a donation for out non-profit from something a...</p>
-        </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/limitations-on-sponsors-for-an-individual-team/506401" target="_blank" class="link-external">https://www.chiefdelphi.com/t/limitations-on-sponsors-for-an-individual-team/506401</a></p>
-        </div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">CAN</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="power" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-power">电源</span></div>
+        <div class="card-badges"><span class="badge badge-power" data-tag="power">电源/配电</span></div>
         <h3 class="card-title">CTR Electronics 2025-26 | New Products</h3>
         <div class="card-meta">
-            <span>💬 31 回复</span>
-            <span>👁️ 3832 浏览</span>
-            <span>❤️ 104 赞</span>
+            <span>💬 33 回复</span>
+            <span>👁️ 4093 浏览</span>
+            <span>❤️ 111 赞</span>
             <span>📅 2025-10-24</span>
+            <span>🔄 最新 7小时前</span>
         </div>
     </div>
     <div class="card-preview">
         <p>Power Distribution Panel Breaker - Auto-Reset Breakers for FRC Robots
-The Power Distribution Panel Breaker is a FIRST® Robotics Competition legal, auto-reset circuit breaker designed for high-performa...</p>
+The Power Distribution Panel Breaker is a FIRST® Robotics Competition legal, auto-reset circuit breaker designed for high-performa…</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>（暂无中文摘要）</p>
+            <h4>📋 摘要</h4>
+            <p>Power Distribution Panel Breaker - Auto-Reset Breakers for FRC Robots
+The Power Distribution Panel Breaker is a FIRST® Robotics Competition legal, auto-reset circuit breaker designed for high-performa…</p>
         </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Power Distribution Panel Breaker - Auto-Reset Breakers for FRC Robots
-The Power Distribution Panel Breaker is a FIRST® Robotics Competition legal, auto-reset circuit breaker designed for high-performa...</p>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 daltzsmith · 楼主</div><div class="post-text">Power Distribution Panel Breaker - Auto-Reset Breakers for FRC Robots The Power Distribution Panel Breaker is a FIRS T® Robotics Competition legal, auto-reset circuit breaker designed for high-performance robotics applications. Available in 10, 20, 30, and 40 Amp ratings, these breakers protect your FRC robot’s electrical system by allowing load currents in the Power Distribution Panel ( PDP ) up </div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 rich.varone · #2 · 10-24</div><div class="post-text">Quick look at the data sheet and these are looking neat, question though, we’ve been binning our breakers for a few years now with a milliohm meter, I don’t think other manufactures have official data out on this but we’ve noticed that it can vary pretty significantly and typically end up with a box of not for competition use because of this, any chance you have data on this for your breakers?</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="507497">
+            <p>⚡ 点击卡片查看详细分析...</p>
         </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原帖链接</h4>
+            <h4>🔗 原帖链接</h4>
             <p><a href="https://www.chiefdelphi.com/t/ctr-electronics-2025-26-new-products/507497" target="_blank" class="link-external">https://www.chiefdelphi.com/t/ctr-electronics-2025-26-new-products/507497</a></p>
         </div>
+        
+    <div class="feedback-bar" data-topic-id="507497" data-title="CTR Electronics 2025-26 | New Products" data-url="https://www.chiefdelphi.com/t/ctr-electronics-2025-26-new-products/507497">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
+        </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'power')">电源/配电</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">电源</span>
+            <span class="card-tag">电源/配电</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="power" onclick="toggleCard(this)">
+<div class="card" data-tags="motor" data-id="514280" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-power">电源</span></div>
-        <h3 class="card-title">2026世锦赛值得参观的电气强队PITS推荐<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">Best teams to visit in PITS for electrical at Worlds 2026?</div></h3>
-        <div class="card-meta">
-            <span>💬 15 回复</span>
-            <span>👁️ 1185 浏览</span>
-            <span>❤️ 68 赞</span>
-            <span>📅 2026-04-20</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>询问社区推荐哪些队伍在世锦赛PIT区的电气系统设计值得参观学习。讨论聚焦于布线美观度、电气布局创新性、电池管理系统、CAN总线拓扑等值得借鉴的设计实践。</p>
-    </div>
-    <div class="card-detail">
-        <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>询问社区推荐哪些队伍在世锦赛PIT区的电气系统设计值得参观学习。讨论聚焦于布线美观度、电气布局创新性、电池管理系统、CAN总线拓扑等值得借鉴的设计实践。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">I’m heading to Worlds this year and one of my goals is to walk the pits and learn as much as possible about how other teams approach their electrical systems. I’m specifically interested in: 
-•	Teams ...</p>
-        </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/best-teams-to-visit-in-pits-for-electrical-at-worlds-2026/518925" target="_blank" class="link-external">https://www.chiefdelphi.com/t/best-teams-to-visit-in-pits-for-electrical-at-worlds-2026/518925</a></p>
-        </div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">电源</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="motor trouble" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-motor">电机</span><span class="badge badge-trouble">故障</span></div>
-        <h3 class="card-title">931队求助：急需8个Kraken电机<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">931 Needs Help Obtaining Krakens</div></h3>
+        <div class="card-badges"><span class="badge badge-motor" data-tag="motor">电机/驱动</span></div>
+        <h3 class="card-title">931 Needs Help Obtaining Krakens</h3>
         <div class="card-meta">
             <span>💬 21 回复</span>
             <span>👁️ 1410 浏览</span>
             <span>❤️ 52 赞</span>
             <span>📅 2026-02-13</span>
+            <span>🔄 最新 02-16</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>931队发现需要8个Kraken X60才能完成机器人。已发起GoFundMe筹款，同时寻求社区捐赠或借用。该队来自Gateway STEM高中，已完成90%零件加工（CNC+3D打印），但原计划复用旧电机的方案因今年设计不兼容而失败。比赛日期3月26-28日，时间紧迫。</p>
+        <p> 
+931 has recently discovered that 8 Kraken X60s will be needed to complete our robot. A GoFundMe has been started but we are also looking to see if anyone has motors available for donation/borrowing…</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>931队发现需要8个Kraken X60才能完成机器人。已发起GoFundMe筹款，同时寻求社区捐赠或借用。该队来自Gateway STEM高中，已完成90%零件加工（CNC+3D打印），但原计划复用旧电机的方案因今年设计不兼容而失败。比赛日期3月26-28日，时间紧迫。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;"> 
+            <h4>📋 摘要</h4>
+            <p> 
 931 has recently discovered that 8 Kraken X60s will be needed to complete our robot. A GoFundMe has been started but we are also looking to see if anyone has motors available for donation/borrowing…</p>
         </div>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 four · 楼主</div><div class="post-text">image 720×405 91.8 KB 931 has recently discovered that 8 Kraken X60s will be needed to complete our robot. A GoFundMe has been started but we are also looking to see if anyone has motors available for donation/borrowing. Thank you. We are FIRST Robotics Competition (FRC) Team 931 – Perpetual Chaos, a dedicated group of student engineers from Gateway STEM High School and surrounding area schools. R</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 AidenBeau · #2 · 02-13</div><div class="post-text">Those look like falcons in cad. Falcon and kraken tooth profiles are different. Make sure you update your motor pinion pulleys to what motors you end up with. You might be able to drive a few mechanisms with neos.</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="514280">
+            <p>⚡ 点击卡片查看详细分析...</p>
+        </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原帖链接</h4>
+            <h4>🔗 原帖链接</h4>
             <p><a href="https://www.chiefdelphi.com/t/931-needs-help-obtaining-krakens/514280" target="_blank" class="link-external">https://www.chiefdelphi.com/t/931-needs-help-obtaining-krakens/514280</a></p>
         </div>
+        
+    <div class="feedback-bar" data-topic-id="514280" data-title="931 Needs Help Obtaining Krakens" data-url="https://www.chiefdelphi.com/t/931-needs-help-obtaining-krakens/514280">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
+        </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'motor')">电机/驱动</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">电机</span><span class="card-tag">故障</span>
+            <span class="card-tag">电机/驱动</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="can" onclick="toggleCard(this)">
+<div class="card" data-tags="sensor" data-id="518940" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
-        <h3 class="card-title">What are the best things a team can do off season to prep for the next year?</h3>
+        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
+        <h3 class="card-title">Business Idea: PhotonVision and LimeLight Alternative?</h3>
         <div class="card-meta">
-            <span>💬 19 回复</span>
-            <span>👁️ 935 浏览</span>
-            <span>❤️ 26 赞</span>
+            <span>💬 10 回复</span>
+            <span>👁️ 570 浏览</span>
+            <span>❤️ 13 赞</span>
             <span>📅 2026-04-20</span>
+            <span>🔄 最新 8小时前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>As a newly returning and rather inexperienced team, we are looking to plug many of the deficiencies that plagued our last FRC season, such as a lack of funding, members, experience, materials, space, ...</p>
+        <p>Hey everyone! 
+After wrapping up the 2026 season, I found myself with ~3000 lines of custom vision code sitting on an Orange Pi 5 Pro. It did AprilTag detection + custom object detection (3D XYZ proje…</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>（暂无中文摘要）</p>
+            <h4>📋 摘要</h4>
+            <p>Hey everyone! 
+After wrapping up the 2026 season, I found myself with ~3000 lines of custom vision code sitting on an Orange Pi 5 Pro. It did AprilTag detection + custom object detection (3D XYZ proje…</p>
         </div>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 MogMentality · 楼主</div><div class="post-text">Hey everyone! After wrapping up the 2026 season, I found myself with ~3000 lines of custom vision code sitting on an Orange Pi 5 Pro. It did AprilTag detection + custom object detection (3D XYZ projection) reliably, but I realized the biggest barrier to entry wasn’t the AI—it was the setup time. I’m working on turning this into a product I’m tentatively calling VisionCore . The Goal: A “Limelight-</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 Sam948 · #2 · 昨天</div><div class="post-text">I’m curious as to how you’re implementing the model conversion without a dataset to quantize against. I’d also love to hear how this reduces the setup time for object detection compared to PV/LL. MogMentality: CPU inference is up to 43% faster due to NMS removal. Why should I care about CPU inference? You said it’ll be on an OPI, those have NPUs.</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="518940">
+            <p>⚡ 点击卡片查看详细分析...</p>
+        </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">As a newly returning and rather inexperienced team, we are looking to plug many of the deficiencies that plagued our last FRC season, such as a lack of funding, members, experience, materials, space, ...</p>
+            <h4>🔗 原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/business-idea-photonvision-and-limelight-alternative/518940" target="_blank" class="link-external">https://www.chiefdelphi.com/t/business-idea-photonvision-and-limelight-alternative/518940</a></p>
         </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/what-are-the-best-things-a-team-can-do-off-season-to-prep-for-the-next-year/518883" target="_blank" class="link-external">https://www.chiefdelphi.com/t/what-are-the-best-things-a-team-can-do-off-season-to-prep-for-the-next-year/518883</a></p>
+        
+    <div class="feedback-bar" data-topic-id="518940" data-title="Business Idea: PhotonVision and LimeLight Alternative?" data-url="https://www.chiefdelphi.com/t/business-idea-photonvision-and-limelight-alternative/518940">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
         </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">CAN</span>
+            <span class="card-tag">传感器/视觉</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="can" onclick="toggleCard(this)">
+<div class="card" data-tags="power" data-id="507805" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
-        <h3 class="card-title">FRC队伍筹款方式汇总<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">What types of fundraising dose your team do for frc</div></h3>
-        <div class="card-meta">
-            <span>💬 13 回复</span>
-            <span>👁️ 1390 浏览</span>
-            <span>❤️ 25 赞</span>
-            <span>📅 2024-04-03</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>征集各队筹款经验。除了申请资助外，还在等待资助审批期间可以做哪些筹款活动。社区分享各种成功案例：企业赞助、社区活动、产品售卖、众筹平台等。</p>
-    </div>
-    <div class="card-detail">
-        <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>征集各队筹款经验。除了申请资助外，还在等待资助审批期间可以做哪些筹款活动。社区分享各种成功案例：企业赞助、社区活动、产品售卖、众筹平台等。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">We are looking for ways to raise funds for our team we have looked at grants and applied but what fundraising can we do while waiting for grants to go through?</p>
-        </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/what-types-of-fundraising-dose-your-team-do-for-frc/461176" target="_blank" class="link-external">https://www.chiefdelphi.com/t/what-types-of-fundraising-dose-your-team-do-for-frc/461176</a></p>
-        </div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">CAN</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="can" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
-        <h3 class="card-title">PizzaByte 2.0 GoFundMe筹款<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">PizzaByte 2.0 GoFund Me</div></h3>
-        <div class="card-meta">
-            <span>💬 14 回复</span>
-            <span>👁️ 745 浏览</span>
-            <span>❤️ 24 赞</span>
-            <span>📅 2025-04-11</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>PizzaByte 2.0（巴拿马及中美洲首支FRC队伍）成功晋级FIRST世锦赛，创造历史。发起GoFundMe为参赛费用筹款，无论金额大小都欢迎支持。</p>
-    </div>
-    <div class="card-detail">
-        <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>PizzaByte 2.0（巴拿马及中美洲首支FRC队伍）成功晋级FIRST世锦赛，创造历史。发起GoFundMe为参赛费用筹款，无论金额大小都欢迎支持。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hey there! I’m reaching out to share some exciting news. Pizzabyte 2.0 just qualified for the FIRST Championship, making history for Panama and Central America! Your support, no matter how small, can ...</p>
-        </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/pizzabyte-2-0-gofund-me/498924" target="_blank" class="link-external">https://www.chiefdelphi.com/t/pizzabyte-2-0-gofund-me/498924</a></p>
-        </div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">CAN</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="power" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-power">电源</span></div>
-        <h3 class="card-title">我们可能无法参加地区赛了<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">We might not make it to regionals this year</div></h3>
+        <div class="card-badges"><span class="badge badge-power" data-tag="power">电源/配电</span></div>
+        <h3 class="card-title">We might not make it to regionals this year</h3>
         <div class="card-meta">
             <span>💬 5 回复</span>
             <span>👁️ 845 浏览</span>
             <span>❤️ 30 赞</span>
             <span>📅 2025-11-03</span>
+            <span>🔄 最新 11-18</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>某队伍面临注册费问题，可能无法参加今年的地区赛。讨论各种应急方案和替代资金来源，包括延期注册、分期付款、紧急筹款等选项。</p>
+        <p>Hey everyone, 
+This season has been extremely challenging for us financially. 
+Due to the current economic situation in Turkey and recent sponsor withdrawals, we’re struggling to cover our regional re…</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>某队伍面临注册费问题，可能无法参加今年的地区赛。讨论各种应急方案和替代资金来源，包括延期注册、分期付款、紧急筹款等选项。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hey everyone, 
+            <h4>📋 摘要</h4>
+            <p>Hey everyone, 
 This season has been extremely challenging for us financially. 
-Due to the current economic situation in Turkey and recent sponsor withdrawals, we’re struggling to cover our regional re...</p>
+Due to the current economic situation in Turkey and recent sponsor withdrawals, we’re struggling to cover our regional re…</p>
         </div>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 B4ris · 楼主</div><div class="post-text">Hey everyone, This season has been extremely challenging for us financially. Due to the current economic situation in Turkey and recent sponsor withdrawals, we’re struggling to cover our regional registration fee — and the payment deadline is November 18 . If things continue like this, we sadly won’t be able to attend the 2026 regional, despite the thing that we already done. Thank you so much for</div><div class="post-more">... 还有 118 字</div></div><div class="post-item"><div class="post-meta">👤 Dominick_Ferone · #2 · 11-03</div><div class="post-text">I would reach out to the local Regional Director, let them know your situation. They may have access to grants/opportunities for you, or at the least help you get an extension on payment.</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="507805">
+            <p>⚡ 点击卡片查看详细分析...</p>
+        </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原帖链接</h4>
+            <h4>🔗 原帖链接</h4>
             <p><a href="https://www.chiefdelphi.com/t/we-might-not-make-it-to-regionals-this-year/507805" target="_blank" class="link-external">https://www.chiefdelphi.com/t/we-might-not-make-it-to-regionals-this-year/507805</a></p>
         </div>
+        
+    <div class="feedback-bar" data-topic-id="507805" data-title="We might not make it to regionals this year" data-url="https://www.chiefdelphi.com/t/we-might-not-make-it-to-regionals-this-year/507805">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
+        </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'power')">电源/配电</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">电源</span>
+            <span class="card-tag">电源/配电</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="can" onclick="toggleCard(this)">
+<div class="card" data-tags="sensor" data-id="518658" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
-        <h3 class="card-title">注册费收取失败问题<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">Failure to collect the registration fee</div></h3>
-        <div class="card-meta">
-            <span>💬 10 回复</span>
-            <span>👁️ 659 浏览</span>
-            <span>❤️ 18 赞</span>
-            <span>📅 2025-10-25</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>讨论FIRST注册费支付过程中遇到的技术/流程问题。包括支付网关故障、学校财务审批延迟、国际汇款困难等情况的解决方案。</p>
-    </div>
-    <div class="card-detail">
-        <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>讨论FIRST注册费支付过程中遇到的技术/流程问题。包括支付网关故障、学校财务审批延迟、国际汇款困难等情况的解决方案。</p>
-        </div>
-        <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">It looks like we won’t be able to raise $6,300. If we don’t participate this season, how much would it cost to build a robot for the off-season, how much is the off-season fee, and can we keep our roo...</p>
-        </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/failure-to-collect-the-registration-fee/507526" target="_blank" class="link-external">https://www.chiefdelphi.com/t/failure-to-collect-the-registration-fee/507526</a></p>
-        </div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">CAN</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="can" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-can">CAN</span></div>
-        <h3 class="card-title">Google Benevity员工配捐是否适用？<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">Can Google works for Benevity?!</div></h3>
+        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
+        <h3 class="card-title">LL4 crashing when presenting calibration board to camera</h3>
         <div class="card-meta">
             <span>💬 13 回复</span>
-            <span>👁️ 1061 浏览</span>
-            <span>❤️ 7 赞</span>
-            <span>📅 2025-04-27</span>
+            <span>👁️ 345 浏览</span>
+            <span>❤️ 6 赞</span>
+            <span>📅 2026-04-16</span>
+            <span>🔄 最新 1小时前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>询问Google员工是否可以通过Benevity平台为FRC队伍进行配捐。讨论企业配捐计划的适用范围、操作流程和注意事项。</p>
+        <p>Hello, our team is pretty new to Limelights and recently got the LL4. We know the default calibration works pretty well, but we would like to calibrate the camera ourselves as well. We brought a calib…</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>询问Google员工是否可以通过Benevity平台为FRC队伍进行配捐。讨论企业配捐计划的适用范围、操作流程和注意事项。</p>
+            <h4>📋 摘要</h4>
+            <p>Hello, our team is pretty new to Limelights and recently got the LL4. We know the default calibration works pretty well, but we would like to calibrate the camera ourselves as well. We brought a calib…</p>
         </div>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 thegreendino · 楼主</div><div class="post-text">Hello, our team is pretty new to Limelights and recently got the LL4. We know the default calibration works pretty well, but we would like to calibrate the camera ourselves as well. We brought a calibration board from ThriftyBot ( Thrifty Vision Calibration Board ). We wired up the LL to the PDH for power and to the radio to connect to it from the computer, and set the settings for the board, as w</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 arnav4632 · #2 · 6天前</div><div class="post-text">Keep an eye on the temperature, the newer limelight overheats very easily, and the charUco board calibration is computation heavy. If you’re using a 3d printed mount it’s especially prone to overheating, you need to install it on something that acts as a heatsink</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="518658">
+            <p>⚡ 点击卡片查看详细分析...</p>
+        </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hello everyone! 
-My team has managed to get a Google employee to act as a mentor, and we are committed to applying the benefit of donations through Benevity (a donation platform for social causes). I ...</p>
+            <h4>🔗 原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/ll4-crashing-when-presenting-calibration-board-to-camera/518658" target="_blank" class="link-external">https://www.chiefdelphi.com/t/ll4-crashing-when-presenting-calibration-board-to-camera/518658</a></p>
         </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/can-google-works-for-benevity/500632" target="_blank" class="link-external">https://www.chiefdelphi.com/t/can-google-works-for-benevity/500632</a></p>
+        
+    <div class="feedback-bar" data-topic-id="518658" data-title="LL4 crashing when presenting calibration board to camera" data-url="https://www.chiefdelphi.com/t/ll4-crashing-when-presenting-calibration-board-to-camera/518658">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
         </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">CAN</span>
+            <span class="card-tag">传感器/视觉</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="power can" onclick="toggleCard(this)">
+<div class="card" data-tags="power" data-id="514892" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-power">电源</span><span class="badge badge-can">CAN</span></div>
-        <h3 class="card-title">个人可为队伍做的筹款活动<div style="font-size:0.75em;color:var(--text-muted);margin-top:4px;font-weight:400;">Fundraising that can be done as an individual</div></h3>
+        <div class="card-badges"><span class="badge badge-power" data-tag="power">电源/配电</span></div>
+        <h3 class="card-title">Visualizing WPILib Rectangle2ds</h3>
         <div class="card-meta">
-            <span>💬 8 回复</span>
-            <span>👁️ 575 浏览</span>
-            <span>❤️ 8 赞</span>
-            <span>📅 2024-03-19</span>
+            <span>💬 5 回复</span>
+            <span>👁️ 314 浏览</span>
+            <span>❤️ 11 赞</span>
+            <span>📅 2026-02-23</span>
+            <span>🔄 最新 6小时前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>讨论不以学校官方名义、由个人发起的筹款活动形式和合规性。包括个人捐赠、小额众筹、社区服务筹款等适合个人操作的筹款方式。</p>
+        <p>Hello! 
+A lot of my team’s logic this year is based on which zone the robot is currently in (trench, alliance zone, etc). Currently, we’re using a combination of Rectangle2ds and .contains(pose) to ch…</p>
     </div>
     <div class="card-detail">
         <div class="detail-section">
-            <h4>中文摘要</h4>
-            <p>讨论不以学校官方名义、由个人发起的筹款活动形式和合规性。包括个人捐赠、小额众筹、社区服务筹款等适合个人操作的筹款方式。</p>
+            <h4>📋 摘要</h4>
+            <p>Hello! 
+A lot of my team’s logic this year is based on which zone the robot is currently in (trench, alliance zone, etc). Currently, we’re using a combination of Rectangle2ds and .contains(pose) to ch…</p>
         </div>
+        <div class="posts-section"><h4>📄 帖子内容</h4><div class="post-item post-op"><div class="post-meta">👤 apinguen · 楼主</div><div class="post-text">Hello! A lot of my team’s logic this year is based on which zone the robot is currently in (trench, alliance zone, etc). Currently, we’re using a combination of Rectangle2ds and .contains(pose) to check whether the robot is in the specified area. I was wondering if there was a good way (AdvantageScope, Glass, or other) to verify our inputted measurements for the zones were correct, by rendering th</div><div class="post-more">... 还有 165 字</div></div><div class="post-item"><div class="post-meta">👤 nstrike · #2 · 02-23</div><div class="post-text">The way I have seen it done is via trajectories. I hope there is a better way tho. FIRST Robotics Competition Documentation setTrajectory() - The Field2d Widget Glass supports displaying your robot’s position on the field using the Field2d widget. An instance of the Field2d class should be created, sent over NetworkTables, and updated periodically with the latest robot pose in your robot code. | G</div><div class="post-more">... 还有 7 字</div></div></div>
+        
+    <div class="analysis-section">
+        <h4>🔍 分析与结论</h4>
+        <div class="analysis-placeholder" data-topic-id="514892">
+            <p>⚡ 点击卡片查看详细分析...</p>
+        </div>
+    </div>
+    
         <div class="detail-section">
-            <h4>原文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">My FTC team needs a real tile floor. Currently we have a mat that although it works well, it’s only good for teleop drive practice. Because of how the floor is measured, it doesn’t have any spike mark...</p>
+            <h4>🔗 原帖链接</h4>
+            <p><a href="https://www.chiefdelphi.com/t/visualizing-wpilib-rectangle2ds/514892" target="_blank" class="link-external">https://www.chiefdelphi.com/t/visualizing-wpilib-rectangle2ds/514892</a></p>
         </div>
-        <div class="detail-section">
-            <h4>原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/fundraising-that-can-be-done-as-an-individual/459268" target="_blank" class="link-external">https://www.chiefdelphi.com/t/fundraising-that-can-be-done-as-an-individual/459268</a></p>
+        
+    <div class="feedback-bar" data-topic-id="514892" data-title="Visualizing WPILib Rectangle2ds" data-url="https://www.chiefdelphi.com/t/visualizing-wpilib-rectangle2ds/514892">
+        <div class="feedback-options">
+            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
+                <span class="fb-icon">🔔</span>
+                <span class="fb-label">跟踪</span>
+            </button>
+            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
+                <span class="fb-icon">🚫</span>
+                <span class="fb-label">不看</span>
+            </button>
+            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
+                <span class="fb-icon">🏷️</span>
+                <span class="fb-label">不看这一类</span>
+            </button>
         </div>
+        <button class="fb-copy-btn" onclick="event.stopPropagation(); copyFeedback(this)" style="display:none;">
+            📋 复制反馈
+        </button>
+    </div>
+    
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'power')">电源/配电</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">电源</span><span class="card-tag">CAN</span>
+            <span class="card-tag">电源/配电</span>
         </div>
         <span class="expand-hint"></span>
     </div>
@@ -1012,7 +1338,13 @@ My team has managed to get a Google employee to act as a mentor, and we are comm
         <p style="margin-top:4px;color:var(--text-muted);">Even if the world forgets, I'll remember for you.</p>
     </footer>
     
+    <div class="feedback-toast" id="toast"></div>
+    
     <script>
+        // 话题ID到标签的映射
+        const TOPIC_TAGS = {"506851": ["sensor"], "518699": ["power", "motor"], "518999": ["sensor"], "518723": ["sensor"], "507497": ["power"], "514280": ["motor"], "518940": ["sensor"], "507805": ["power"], "518658": ["sensor"], "514892": ["power"]};
+        
+        // ========== 卡片展开/收起 ==========
         function toggleCard(card) {
             const wasExpanded = card.classList.contains('expanded');
             document.querySelectorAll('.card.expanded').forEach(c => c.classList.remove('expanded'));
@@ -1022,6 +1354,7 @@ My team has managed to get a Google employee to act as a mentor, and we are comm
             }
         }
         
+        // ========== 筛选 ==========
         const filterTags = document.querySelectorAll('.filter-tag');
         const allCards = document.querySelectorAll('.card');
         const totalCountEl = document.getElementById('totalCount');
@@ -1048,6 +1381,7 @@ My team has managed to get a Google employee to act as a mentor, and we are comm
             });
         });
         
+        // ========== 搜索 ==========
         const searchInput = document.getElementById('searchInput');
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase();
@@ -1064,6 +1398,214 @@ My team has managed to get a Google employee to act as a mentor, and we are comm
             });
             
             totalCountEl.textContent = visible;
+        });
+        
+        // ========== 反馈系统 ==========
+        
+        // 显示提示
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+        
+        // 切换反馈状态
+        function toggleFeedback(btn, type) {
+            const bar = btn.closest('.feedback-bar');
+            const topicId = bar.dataset.topicId;
+            
+            // 取消其他按钮的激活状态
+            bar.querySelectorAll('.fb-btn').forEach(b => {
+                if (b !== btn) b.classList.remove('active');
+            });
+            
+            // 切换当前按钮
+            const wasActive = btn.classList.contains('active');
+            btn.classList.toggle('active');
+            
+            // 保存到 localStorage
+            const key = `cd_feedback_${topicId}`;
+            if (btn.classList.contains('active')) {
+                localStorage.setItem(key, type);
+                showToast(type === 'track' ? '🔔 已标记跟踪' : '🚫 已标记隐藏');
+            } else {
+                localStorage.removeItem(key);
+                showToast('已取消标记');
+            }
+            
+            // 更新复制按钮显示状态
+            updateCopyButton(bar);
+            
+            // 如果是隐藏，视觉淡化
+            const card = bar.closest('.card');
+            if (type === 'hide' && btn.classList.contains('active')) {
+                card.classList.add('dimmed');
+            } else {
+                card.classList.remove('dimmed');
+            }
+        }
+        
+        // 显示标签菜单
+        function showTagMenu(btn) {
+            const bar = btn.closest('.feedback-bar');
+            const menu = bar.nextElementSibling;
+            if (menu && menu.classList.contains('tag-menu')) {
+                const isVisible = menu.style.display !== 'none';
+                // 关闭所有其他菜单
+                document.querySelectorAll('.tag-menu').forEach(m => m.style.display = 'none');
+                menu.style.display = isVisible ? 'none' : 'block';
+            }
+        }
+        
+        // 选择隐藏的标签
+        function selectTagHide(item, tag) {
+            const bar = item.closest('.card-detail').querySelector('.feedback-bar');
+            const topicId = bar.dataset.topicId;
+            
+            // 取消其他按钮
+            bar.querySelectorAll('.fb-btn').forEach(b => b.classList.remove('active'));
+            
+            // 激活"不看这一类"按钮
+            const hideTagBtn = bar.querySelector('.fb-hide-tag');
+            hideTagBtn.classList.add('active');
+            
+            // 保存
+            const key = `cd_feedback_${topicId}`;
+            localStorage.setItem(key, `hide_tag:${tag}`);
+            
+            // 隐藏菜单
+            item.closest('.tag-menu').style.display = 'none';
+            
+            showToast(`🏷️ 已标记不看「${tagLabel(tag)}」类帖子`);
+            updateCopyButton(bar);
+        }
+        
+        // 更新复制按钮显示
+        function updateCopyButton(bar) {
+            const hasActive = bar.querySelector('.fb-btn.active');
+            const copyBtn = bar.querySelector('.fb-copy-btn');
+            copyBtn.style.display = hasActive ? 'block' : 'none';
+        }
+        
+        // 复制反馈文本
+        function copyFeedback(btn) {
+            const bar = btn.closest('.feedback-bar');
+            const topicId = bar.dataset.topicId;
+            const title = bar.dataset.title;
+            const url = bar.dataset.url;
+            
+            // 获取当前反馈类型
+            const activeBtn = bar.querySelector('.fb-btn.active');
+            if (!activeBtn) return;
+            
+            let action = '';
+            let actionType = '';
+            
+            if (activeBtn.classList.contains('fb-track')) {
+                action = '跟踪这个帖子';
+                actionType = 'track';
+            } else if (activeBtn.classList.contains('fb-hide')) {
+                action = '不看这个帖子';
+                actionType = 'hide';
+            } else if (activeBtn.classList.contains('fb-hide-tag')) {
+                const saved = localStorage.getItem(`cd_feedback_${topicId}`);
+                const tag = saved ? saved.split(':')[1] : '';
+                action = `不看「${tagLabel(tag)}」类帖子`;
+                actionType = `hide_tag:${tag}`;
+            }
+            
+            const text = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Kimi Claw 反馈 — ChiefDelphi 电气卡片
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+帖子：${title}
+链接：${url}
+操作：${action}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = '✅ 已复制！';
+                btn.classList.add('copied');
+                showToast('📋 反馈文本已复制到剪贴板');
+                setTimeout(() => {
+                    btn.textContent = '📋 复制反馈';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                // 降级方案
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                btn.textContent = '✅ 已复制！';
+                showToast('📋 反馈文本已复制');
+                setTimeout(() => btn.textContent = '📋 复制反馈', 2000);
+            });
+        }
+        
+        // 标签名称映射
+        function tagLabel(tag) {
+            const map = {
+                'power': '电源/配电',
+                'can': 'CAN/通信',
+                'motor': '电机/驱动',
+                'radio': '无线电/网络',
+                'layout': '布线/安装',
+                'trouble': '故障/求助',
+                'sensor': '传感器/视觉',
+                'control': '编程/控制',
+                'general': '综合'
+            };
+            return map[tag] || tag;
+        }
+        
+        // 清除所有反馈
+        function clearAllFeedback() {
+            if (!confirm('确定要清除所有反馈标记吗？')) return;
+            
+            Object.keys(localStorage).forEach(key => {
+                if (key.startsWith('cd_feedback_')) {
+                    localStorage.removeItem(key);
+                }
+            });
+            
+            document.querySelectorAll('.fb-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.fb-copy-btn').forEach(btn => btn.style.display = 'none');
+            document.querySelectorAll('.card').forEach(card => card.classList.remove('dimmed'));
+            
+            showToast('🗑️ 已清除所有反馈标记');
+        }
+        
+        // ========== 初始化反馈状态 ==========
+        function initFeedbackState() {
+            document.querySelectorAll('.feedback-bar').forEach(bar => {
+                const topicId = bar.dataset.topicId;
+                const saved = localStorage.getItem(`cd_feedback_${topicId}`);
+                if (!saved) return;
+                
+                if (saved === 'track') {
+                    bar.querySelector('.fb-track').classList.add('active');
+                } else if (saved === 'hide') {
+                    bar.querySelector('.fb-hide').classList.add('active');
+                    bar.closest('.card').classList.add('dimmed');
+                } else if (saved.startsWith('hide_tag:')) {
+                    bar.querySelector('.fb-hide-tag').classList.add('active');
+                }
+                
+                updateCopyButton(bar);
+            });
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', initFeedbackState);
+        
+        // 点击空白处关闭标签菜单
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.tag-menu') && !e.target.closest('.fb-hide-tag')) {
+                document.querySelectorAll('.tag-menu').forEach(m => m.style.display = 'none');
+            }
         });
     </script>
 </body>
