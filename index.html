@@ -772,17 +772,17 @@
     </header>
     
     <div class="stats-bar">
-        <div class="stat-item">📦 <span class="stat-value" id="totalCount">9</span> 张卡片</div>
+        <div class="stat-item">📦 <span class="stat-value" id="totalCount">3</span> 张卡片</div>
         <div class="stat-item">🏷️ <span class="stat-value">3</span> 个分类</div>
-        <div class="stat-item">📅 更新于 2026-04-24 03:54</div>
+        <div class="stat-item">📅 更新于 2026-04-25 03:54</div>
         <div class="stat-item">🔌 <a href="https://www.chiefdelphi.com/" target="_blank" style="color:var(--text-muted);">ChiefDelphi.com</a></div>
     </div>
     
     <div class="filter-tags">
 <span class="filter-tag active" data-filter="all">全部</span>
-        <span class="filter-tag" data-filter="sensor">传感器/视觉 <span class="count">4</span></span>
-        <span class="filter-tag" data-filter="motor">电机/驱动 <span class="count">4</span></span>
-        <span class="filter-tag" data-filter="control">编程/控制 <span class="count">1</span></span>
+        <span class="filter-tag" data-filter="motor">电机/驱动 <span class="count">1</span></span>
+        <span class="filter-tag" data-filter="power">电源/配电 <span class="count">1</span></span>
+        <span class="filter-tag" data-filter="sensor">传感器/视觉 <span class="count">1</span></span>
 
     </div>
 
@@ -791,83 +791,13 @@
         <h2 class="section-title">🔥 热门电气帖子</h2>
         <div class="card-grid" id="cardGrid">
 
-<div class="card" data-tags="sensor" data-id="519044" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
-        <h3 class="card-title">Limelight OS 2026.1 关键修复更新<div class="title-en">Limelight 2026.1 - Critical Fixes and Updates</div></h3>
-        <div class="card-meta">
-            <span>💬 22 回复</span>
-            <span>👁️ 1859 浏览</span>
-            <span>❤️ 82 赞</span>
-            <span>📅 2026-04-22</span>
-            <span>🔄 最新 28分钟前</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>Limelight 发布 2026.1 固件，修复两个关键 Bug：① MegaTag2 输出空姿态或场地中心姿态的问题 ② MegaTag2 IMU 模式 3/4 的 Bug。同时新增 IMU 模式支持。</p>
-    </div>
-    <div class="card-detail">
-        
-        <div class="detail-section cn-section">
-            <h4>📝 中文摘要</h4>
-            <p>Limelight 发布 2026.1 固件，修复两个关键 Bug：① MegaTag2 输出空姿态或场地中心姿态的问题 ② MegaTag2 IMU 模式 3/4 的 Bug。同时新增 IMU 模式支持。</p>
-        </div>
-        
-        <div class="detail-section">
-            <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Limelight OS 2026.1 (4/21/26)
-2026.1 features several critical bugfixes and new features. 
-MegaTag2 Output Bugfix [CRITICAL]
-In some instances, MT2 would produce an empty pose or a pose at the center …</p>
-        </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 Brandon_Hjelstrom · 楼主</div><div class="post-text">Limelight OS 2026.1 (4/21/26) 2026.1 features several critical bugfixes and new features. MegaTag2 Output Bugfix [CRITICAL] In some instances, MT2 would produce an empty pose or a pose at the center of the field instead of 0,0,0. MT2 will now always produce a 0,0,0 pose across coordinate systems when it cannot compute a geometrically valid solution. MegaTag2 IMU Modes 3, 4 Bugfix [CRITICAL] After </div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 nobody5690 · #2 · 昨天</div><div class="post-text">Very cool!</div></div></div>
-        
-        <div class="analysis-section">
-            <h4>🔍 分析与结论</h4>
-            <div class="analysis-content">
-                <p>MT2 空姿态 Bug 是严重问题 — 会导致机器人定位瞬间跳到场地中心，严重影响自动阶段。如果你在使用 MT2 + IMU 模式，强烈建议立即更新。更新前备份现有配置，注意检查更新后 pose 输出的坐标系是否正确。</p>
-            </div>
-        </div>
-        
-        <div class="detail-section">
-            <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/limelight-2026-1-critical-fixes-and-updates/519044" target="_blank" class="link-external">https://www.chiefdelphi.com/t/limelight-2026-1-critical-fixes-and-updates/519044</a></p>
-        </div>
-        
-    <div class="feedback-bar" data-topic-id="519044" data-title="Limelight 2026.1 - Critical Fixes and Updates" data-url="https://www.chiefdelphi.com/t/limelight-2026-1-critical-fixes-and-updates/519044" data-tags="sensor">
-        <div class="feedback-options">
-            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
-                <span class="fb-icon">🔔</span>
-                <span class="fb-label">跟踪</span>
-            </button>
-            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
-                <span class="fb-icon">🚫</span>
-                <span class="fb-label">不看</span>
-            </button>
-            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
-                <span class="fb-icon">🏷️</span>
-                <span class="fb-label">不看这一类</span>
-            </button>
-        </div>
-    </div>
-    
-        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">传感器/视觉</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
 <div class="card" data-tags="motor" data-id="514280" onclick="toggleCard(this)">
     <div class="card-header">
         <div class="card-badges"><span class="badge badge-motor" data-tag="motor">电机/驱动</span></div>
         <h3 class="card-title">FRC 931 队求助：急需 8 颗 Kraken X60 电机<div class="title-en">931 Needs Help Obtaining Krakens</div></h3>
         <div class="card-meta">
             <span>💬 21 回复</span>
-            <span>👁️ 1413 浏览</span>
+            <span>👁️ 1417 浏览</span>
             <span>❤️ 52 赞</span>
             <span>📅 2026-02-13</span>
             <span>🔄 最新 02-16</span>
@@ -929,216 +859,30 @@ In some instances, MT2 would produce an empty pose or a pose at the center …</
     </div>
 </div>
 
-<div class="card" data-tags="sensor" data-id="518940" onclick="toggleCard(this)">
+<div class="card" data-tags="power" data-id="519109" onclick="toggleCard(this)">
     <div class="card-header">
-        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
-        <h3 class="card-title">Business Idea: PhotonVision and LimeLight Alternative?</h3>
+        <div class="card-badges"><span class="badge badge-power" data-tag="power">电源/配电</span></div>
+        <h3 class="card-title">Yet another power usage thread</h3>
         <div class="card-meta">
-            <span>💬 15 回复</span>
-            <span>👁️ 915 浏览</span>
-            <span>❤️ 21 赞</span>
-            <span>📅 2026-04-20</span>
-            <span>🔄 最新 5小时前</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>Hey everyone! 
-After wrapping up the 2026 season, I found myself with ~3000 lines of custom vision code sitting on an Orange Pi 5 Pro. It did AprilTag detection + custom object detection (3D XYZ proje…</p>
-    </div>
-    <div class="card-detail">
-        
-        <div class="detail-section">
-            <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hey everyone! 
-After wrapping up the 2026 season, I found myself with ~3000 lines of custom vision code sitting on an Orange Pi 5 Pro. It did AprilTag detection + custom object detection (3D XYZ proje…</p>
-        </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 MogMentality · 楼主</div><div class="post-text">Hey everyone! After wrapping up the 2026 season, I found myself with ~3000 lines of custom vision code sitting on an Orange Pi 5 Pro. It did AprilTag detection + custom object detection (3D XYZ projection) reliably, but I realized the biggest barrier to entry wasn’t the AI—it was the setup time. I’m working on turning this into a product I’m tentatively calling VisionCore . The Goal: A “Limelight-</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 Sam948 · #2 · 2天前</div><div class="post-text">I’m curious as to how you’re implementing the model conversion without a dataset to quantize against. I’d also love to hear how this reduces the setup time for object detection compared to PV/LL. MogMentality: CPU inference is up to 43% faster due to NMS removal. Why should I care about CPU inference? You said it’ll be on an OPI, those have NPUs.</div></div></div>
-        
-        <div class="analysis-section">
-            <h4>🔍 分析与结论</h4>
-            <div class="analysis-placeholder">
-                <p>💡 <strong>等待分析：</strong>标记「跟踪」后复制反馈给我，我会补充技术分析。</p>
-            </div>
-        </div>
-        
-        <div class="detail-section">
-            <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/business-idea-photonvision-and-limelight-alternative/518940" target="_blank" class="link-external">https://www.chiefdelphi.com/t/business-idea-photonvision-and-limelight-alternative/518940</a></p>
-        </div>
-        
-    <div class="feedback-bar" data-topic-id="518940" data-title="Business Idea: PhotonVision and LimeLight Alternative?" data-url="https://www.chiefdelphi.com/t/business-idea-photonvision-and-limelight-alternative/518940" data-tags="sensor">
-        <div class="feedback-options">
-            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
-                <span class="fb-icon">🔔</span>
-                <span class="fb-label">跟踪</span>
-            </button>
-            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
-                <span class="fb-icon">🚫</span>
-                <span class="fb-label">不看</span>
-            </button>
-            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
-                <span class="fb-icon">🏷️</span>
-                <span class="fb-label">不看这一类</span>
-            </button>
-        </div>
-    </div>
-    
-        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">传感器/视觉</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="sensor" data-id="519139" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
-        <h3 class="card-title">Limelight MT2 issue does anyone have any idea what this is caused by?</h3>
-        <div class="card-meta">
-            <span>💬 18 回复</span>
-            <span>👁️ 242 浏览</span>
-            <span>❤️ 1 赞</span>
-            <span>📅 2026-04-23</span>
-            <span>🔄 最新 2小时前</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>Video  Here’s a video of our vision blue is mega tag 1 and green is mega tag 2 does anyone know what this issue is caused by when we add rotation into our vision. vision gets messed up? the video and …</p>
-    </div>
-    <div class="card-detail">
-        
-        <div class="detail-section">
-            <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Video  Here’s a video of our vision blue is mega tag 1 and green is mega tag 2 does anyone know what this issue is caused by when we add rotation into our vision. vision gets messed up? the video and …</p>
-        </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 prods · 楼主</div><div class="post-text">Video Here’s a video of our vision blue is mega tag 1 and green is mega tag 2 does anyone know what this issue is caused by when we add rotation into our vision. vision gets messed up? the video and the data is all from the rwnd file of only one limelight.</div></div><div class="post-item"><div class="post-meta">👤 SLAB-Mr.Thomas · #2 · 6小时前</div><div class="post-text">prods: what this issue is prods: vision gets messed up What do you think isn’t right? (I don’t see anything particularly unusual or bad.) What did the same scene look like before you made a change? That is, what is the difference between the before and after your change that makes this look incorrect to you? prods: add rotation into our vision Exactly what do you mean by this?</div></div></div>
-        
-        <div class="analysis-section">
-            <h4>🔍 分析与结论</h4>
-            <div class="analysis-placeholder">
-                <p>💡 <strong>等待分析：</strong>标记「跟踪」后复制反馈给我，我会补充技术分析。</p>
-            </div>
-        </div>
-        
-        <div class="detail-section">
-            <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/limelight-mt2-issue-does-anyone-have-any-idea-what-this-is-caused-by/519139" target="_blank" class="link-external">https://www.chiefdelphi.com/t/limelight-mt2-issue-does-anyone-have-any-idea-what-this-is-caused-by/519139</a></p>
-        </div>
-        
-    <div class="feedback-bar" data-topic-id="519139" data-title="Limelight MT2 issue does anyone have any idea what this is caused by?" data-url="https://www.chiefdelphi.com/t/limelight-mt2-issue-does-anyone-have-any-idea-what-this-is-caused-by/519139" data-tags="sensor">
-        <div class="feedback-options">
-            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
-                <span class="fb-icon">🔔</span>
-                <span class="fb-label">跟踪</span>
-            </button>
-            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
-                <span class="fb-icon">🚫</span>
-                <span class="fb-label">不看</span>
-            </button>
-            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
-                <span class="fb-icon">🏷️</span>
-                <span class="fb-label">不看这一类</span>
-            </button>
-        </div>
-    </div>
-    
-        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'sensor')">传感器/视觉</div></div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">传感器/视觉</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="motor" data-id="519144" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-motor" data-tag="motor">电机/驱动</span></div>
-        <h3 class="card-title">Kraken x60 problem</h3>
-        <div class="card-meta">
-            <span>💬 14 回复</span>
-            <span>👁️ 391 浏览</span>
-            <span>❤️ 6 赞</span>
-            <span>📅 2026-04-23</span>
-            <span>🔄 最新 1小时前</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>Hello everyone, recently our Kraken has been having a problem where it only rotates if we give it a push with our hand on the axle. At first glance, it seems to be some internal damage, however the LE…</p>
-    </div>
-    <div class="card-detail">
-        
-        <div class="detail-section">
-            <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hello everyone, recently our Kraken has been having a problem where it only rotates if we give it a push with our hand on the axle. At first glance, it seems to be some internal damage, however the LE…</p>
-        </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 Matheus · 楼主</div><div class="post-text">Hello everyone, recently our Kraken has been having a problem where it only rotates if we give it a push with our hand on the axle. At first glance, it seems to be some internal damage, however the LED status indicates that it is normal. Has anyone else experienced this?</div></div><div class="post-item"><div class="post-meta">👤 RicDV · #2 · 6小时前</div><div class="post-text">Is it under load? or not connected to anything? IF under load…possibly need to increase power. IF not connected to anything…then you have a problem.</div></div></div>
-        
-        <div class="analysis-section">
-            <h4>🔍 分析与结论</h4>
-            <div class="analysis-placeholder">
-                <p>💡 <strong>等待分析：</strong>标记「跟踪」后复制反馈给我，我会补充技术分析。</p>
-            </div>
-        </div>
-        
-        <div class="detail-section">
-            <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/kraken-x60-problem/519144" target="_blank" class="link-external">https://www.chiefdelphi.com/t/kraken-x60-problem/519144</a></p>
-        </div>
-        
-    <div class="feedback-bar" data-topic-id="519144" data-title="Kraken x60 problem" data-url="https://www.chiefdelphi.com/t/kraken-x60-problem/519144" data-tags="motor">
-        <div class="feedback-options">
-            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
-                <span class="fb-icon">🔔</span>
-                <span class="fb-label">跟踪</span>
-            </button>
-            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
-                <span class="fb-icon">🚫</span>
-                <span class="fb-label">不看</span>
-            </button>
-            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
-                <span class="fb-icon">🏷️</span>
-                <span class="fb-label">不看这一类</span>
-            </button>
-        </div>
-    </div>
-    
-        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'motor')">电机/驱动</div></div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">电机/驱动</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="motor" data-id="519092" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-motor" data-tag="motor">电机/驱动</span></div>
-        <h3 class="card-title">Using a non-connected motor as a shunt</h3>
-        <div class="card-meta">
-            <span>💬 13 回复</span>
-            <span>👁️ 894 浏览</span>
-            <span>❤️ 6 赞</span>
+            <span>💬 24 回复</span>
+            <span>👁️ 1179 浏览</span>
+            <span>❤️ 11 赞</span>
             <span>📅 2026-04-22</span>
-            <span>🔄 最新 5小时前</span>
+            <span>🔄 最新 5分钟前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>Would it be legal to use a motor, such as a CIM, as a dynamic brake, not connected to the electrical system?  Basically a self-braking motor-generator, by placing a resistor (value to be determined) b…</p>
+        <p>Our team has struggled with battery issues for years, so we’re beginning to question whether it’s a systemic issue rather than simply poor current draw optimization. 
+Our robot this year does draw a l…</p>
     </div>
     <div class="card-detail">
         
         <div class="detail-section">
             <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Would it be legal to use a motor, such as a CIM, as a dynamic brake, not connected to the electrical system?  Basically a self-braking motor-generator, by placing a resistor (value to be determined) b…</p>
+            <p style="color:var(--text-muted);font-size:0.85em;">Our team has struggled with battery issues for years, so we’re beginning to question whether it’s a systemic issue rather than simply poor current draw optimization. 
+Our robot this year does draw a l…</p>
         </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 JimB1918 · 楼主</div><div class="post-text">Would it be legal to use a motor, such as a CIM, as a dynamic brake, not connected to the electrical system? Basically a self-braking motor-generator, by placing a resistor (value to be determined) between + and -. Just trying to determine a passive way to control the deployment speed of something with CF springs.</div></div><div class="post-item"><div class="post-meta">👤 Landon_K · #2 · 昨天</div><div class="post-text">Seems like that should be legal, probably as a custom circuit? Someone else is more the expert for that question, but the first thing I thought of was a rotary damper. Some examples here: McMaster-Carr . Not sure how resistive it needs to be but seems reasonably likely to find one in the torque range of a electrically locked CIM. Edit: Expert came along - Rule R504 | FRCTools</div></div></div>
+        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 brodye · 楼主</div><div class="post-text">Our team has struggled with battery issues for years, so we’re beginning to question whether it’s a systemic issue rather than simply poor current draw optimization. Our robot this year does draw a lot of current - our turret flywheel is very inefficient, for example. However, we don’t think our issues come from simply using too much power because we’ve spent a lot of time reducing current draw an</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 CHahn · #2 · 昨天</div><div class="post-text">So first thing that sticks out to me is Matches P12, Q2, Q12 and Q57 are the high brownout matches. Did those all use the same battery? Or were all of them different batteries? Would be interesting to see brownouts/match per battery. Also to me brownouts are due to spikes in instantaneous current draw over total energy used. Yes as the battery is used up the baseline voltage does sag, but usually </div><div class="post-more">... 还有 399 字</div></div></div>
         
         <div class="analysis-section">
             <h4>🔍 分析与结论</h4>
@@ -1149,10 +893,10 @@ After wrapping up the 2026 season, I found myself with ~3000 lines of custom vis
         
         <div class="detail-section">
             <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/using-a-non-connected-motor-as-a-shunt/519092" target="_blank" class="link-external">https://www.chiefdelphi.com/t/using-a-non-connected-motor-as-a-shunt/519092</a></p>
+            <p><a href="https://www.chiefdelphi.com/t/yet-another-power-usage-thread/519109" target="_blank" class="link-external">https://www.chiefdelphi.com/t/yet-another-power-usage-thread/519109</a></p>
         </div>
         
-    <div class="feedback-bar" data-topic-id="519092" data-title="Using a non-connected motor as a shunt" data-url="https://www.chiefdelphi.com/t/using-a-non-connected-motor-as-a-shunt/519092" data-tags="motor">
+    <div class="feedback-bar" data-topic-id="519109" data-title="Yet another power usage thread" data-url="https://www.chiefdelphi.com/t/yet-another-power-usage-thread/519109" data-tags="power">
         <div class="feedback-options">
             <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
                 <span class="fb-icon">🔔</span>
@@ -1169,164 +913,38 @@ After wrapping up the 2026 season, I found myself with ~3000 lines of custom vis
         </div>
     </div>
     
-        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'motor')">电机/驱动</div></div>
+        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'power')">电源/配电</div></div>
     </div>
     <div class="card-footer">
         <div class="card-tags">
-            <span class="card-tag">电机/驱动</span>
+            <span class="card-tag">电源/配电</span>
         </div>
         <span class="expand-hint"></span>
     </div>
 </div>
 
-<div class="card" data-tags="motor" data-id="519142" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-motor" data-tag="motor">电机/驱动</span></div>
-        <h3 class="card-title">Please help us urgently with the kraken x60</h3>
-        <div class="card-meta">
-            <span>💬 4 回复</span>
-            <span>👁️ 265 浏览</span>
-            <span>❤️ 13 赞</span>
-            <span>📅 2026-04-23</span>
-            <span>🔄 最新 6小时前</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>Hi everyone, I’m a competitor on the 9484 team from Brazil. Our team will be competing in the First Championship, and unfortunately, during one of our pre-trip training sessions, one of the Kraken X60…</p>
-    </div>
-    <div class="card-detail">
-        
-        <div class="detail-section">
-            <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hi everyone, I’m a competitor on the 9484 team from Brazil. Our team will be competing in the First Championship, and unfortunately, during one of our pre-trip training sessions, one of the Kraken X60…</p>
-        </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 DaviQCB · 楼主</div><div class="post-text">Hi everyone, I’m a competitor on the 9484 team from Brazil. Our team will be competing in the First Championship, and unfortunately, during one of our pre-trip training sessions, one of the Kraken X60 motors on our Swerve drivetrain stopped working. Since we’re traveling this Saturday, we wouldn’t have time to get another one, so I’m really asking for help from this community to see if anyone coul</div><div class="post-more">... 还有 99 字</div></div><div class="post-item"><div class="post-meta">👤 Logandelaar · #2 · 6小时前</div><div class="post-text">5000 will take care of you. Ill pack an extra for yall</div></div></div>
-        
-        <div class="analysis-section">
-            <h4>🔍 分析与结论</h4>
-            <div class="analysis-placeholder">
-                <p>💡 <strong>等待分析：</strong>标记「跟踪」后复制反馈给我，我会补充技术分析。</p>
-            </div>
-        </div>
-        
-        <div class="detail-section">
-            <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/please-help-us-urgently-with-the-kraken-x60/519142" target="_blank" class="link-external">https://www.chiefdelphi.com/t/please-help-us-urgently-with-the-kraken-x60/519142</a></p>
-        </div>
-        
-    <div class="feedback-bar" data-topic-id="519142" data-title="Please help us urgently with the kraken x60" data-url="https://www.chiefdelphi.com/t/please-help-us-urgently-with-the-kraken-x60/519142" data-tags="motor">
-        <div class="feedback-options">
-            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
-                <span class="fb-icon">🔔</span>
-                <span class="fb-label">跟踪</span>
-            </button>
-            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
-                <span class="fb-icon">🚫</span>
-                <span class="fb-label">不看</span>
-            </button>
-            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
-                <span class="fb-icon">🏷️</span>
-                <span class="fb-label">不看这一类</span>
-            </button>
-        </div>
-    </div>
-    
-        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'motor')">电机/驱动</div></div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">电机/驱动</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="control" data-id="519174" onclick="toggleCard(this)">
-    <div class="card-header">
-        <div class="card-badges"><span class="badge badge-control" data-tag="control">编程/控制</span></div>
-        <h3 class="card-title">Trying to Learn How to Teach</h3>
-        <div class="card-meta">
-            <span>💬 3 回复</span>
-            <span>👁️ 281 浏览</span>
-            <span>❤️ 3 赞</span>
-            <span>📅 2026-04-23</span>
-            <span>🔄 最新 1小时前</span>
-        </div>
-    </div>
-    <div class="card-preview">
-        <p>Hey CD! This past year I have taken up doing Programming, Electrical, and CAD for my team. I have also become the Lead person for all of these things as I am currently the only person who knows how. M…</p>
-    </div>
-    <div class="card-detail">
-        
-        <div class="detail-section">
-            <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Hey CD! This past year I have taken up doing Programming, Electrical, and CAD for my team. I have also become the Lead person for all of these things as I am currently the only person who knows how. M…</p>
-        </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 Bray500000 · 楼主</div><div class="post-text">Hey CD! This past year I have taken up doing Programming, Electrical, and CAD for my team. I have also become the Lead person for all of these things as I am currently the only person who knows how. My team mentor said that I have too much on my plate and should step down from Electrical and CAD, and to teach other members of the team to do these things. The issue is: I can’t teach. I have tried, </div><div class="post-more">... 还有 130 字</div></div><div class="post-item"><div class="post-meta">👤 Midnightamithest42 · #2 · 1小时前</div><div class="post-text">I have found that writing something is easier than explaining it. If you write a guide or something similar, that might explain it better to them</div></div></div>
-        
-        <div class="analysis-section">
-            <h4>🔍 分析与结论</h4>
-            <div class="analysis-placeholder">
-                <p>💡 <strong>等待分析：</strong>标记「跟踪」后复制反馈给我，我会补充技术分析。</p>
-            </div>
-        </div>
-        
-        <div class="detail-section">
-            <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/trying-to-learn-how-to-teach/519174" target="_blank" class="link-external">https://www.chiefdelphi.com/t/trying-to-learn-how-to-teach/519174</a></p>
-        </div>
-        
-    <div class="feedback-bar" data-topic-id="519174" data-title="Trying to Learn How to Teach" data-url="https://www.chiefdelphi.com/t/trying-to-learn-how-to-teach/519174" data-tags="control">
-        <div class="feedback-options">
-            <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
-                <span class="fb-icon">🔔</span>
-                <span class="fb-label">跟踪</span>
-            </button>
-            <button class="fb-btn fb-hide" onclick="event.stopPropagation(); toggleFeedback(this, 'hide')">
-                <span class="fb-icon">🚫</span>
-                <span class="fb-label">不看</span>
-            </button>
-            <button class="fb-btn fb-hide-tag" onclick="event.stopPropagation(); showTagMenu(this)">
-                <span class="fb-icon">🏷️</span>
-                <span class="fb-label">不看这一类</span>
-            </button>
-        </div>
-    </div>
-    
-        <div class="tag-menu" style="display:none;"><div class="tag-menu-item" onclick="event.stopPropagation(); selectTagHide(this, 'control')">编程/控制</div></div>
-    </div>
-    <div class="card-footer">
-        <div class="card-tags">
-            <span class="card-tag">编程/控制</span>
-        </div>
-        <span class="expand-hint"></span>
-    </div>
-</div>
-
-<div class="card" data-tags="sensor" data-id="519171" onclick="toggleCard(this)">
+<div class="card" data-tags="sensor" data-id="518219" onclick="toggleCard(this)">
     <div class="card-header">
         <div class="card-badges"><span class="badge badge-sensor" data-tag="sensor">传感器/视觉</span></div>
-        <h3 class="card-title">PhotonVision and LimeLight Clarification</h3>
+        <h3 class="card-title">Blinded by the sun no more - Tip for Gotham/NYC teams</h3>
         <div class="card-meta">
-            <span>💬 3 回复</span>
-            <span>👁️ 172 浏览</span>
-            <span>❤️ 2 赞</span>
-            <span>📅 2026-04-23</span>
-            <span>🔄 最新 38分钟前</span>
+            <span>💬 7 回复</span>
+            <span>👁️ 1083 浏览</span>
+            <span>❤️ 35 赞</span>
+            <span>📅 2026-04-09</span>
+            <span>🔄 最新 34分钟前</span>
         </div>
     </div>
     <div class="card-preview">
-        <p>Can someone help clarify for me? Do either PhotonVision and/or LimeLight support custom object detection (like a fuel game piece)? If so, what data does this return? X? Y? Z? Roll? Pitch? Yaw? 
-Do eit…</p>
+        <p>I hate seeing teams losing because their robots broke or the sun messed their vision. Because of that, I’d like to share a trick we just came up with that was a nice advantage at this week’s Gotham Re…</p>
     </div>
     <div class="card-detail">
         
         <div class="detail-section">
             <h4>📋 英文摘要</h4>
-            <p style="color:var(--text-muted);font-size:0.85em;">Can someone help clarify for me? Do either PhotonVision and/or LimeLight support custom object detection (like a fuel game piece)? If so, what data does this return? X? Y? Z? Roll? Pitch? Yaw? 
-Do eit…</p>
+            <p style="color:var(--text-muted);font-size:0.85em;">I hate seeing teams losing because their robots broke or the sun messed their vision. Because of that, I’d like to share a trick we just came up with that was a nice advantage at this week’s Gotham Re…</p>
         </div>
-        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 MogMentality · 楼主</div><div class="post-text">Can someone help clarify for me? Do either PhotonVision and/or LimeLight support custom object detection (like a fuel game piece)? If so, what data does this return? X? Y? Z? Roll? Pitch? Yaw? Do either of these support autonomous decisions based on the custom object detection? Like picking up balls automatically? Avoiding obstacles? Etc.</div></div><div class="post-item"><div class="post-meta">👤 Sam948 · #2 · 2小时前</div><div class="post-text">See Object Detection - PhotonVision Docs</div></div></div>
+        <div class="posts-section"><h4>📄 原帖内容</h4><div class="post-item post-op"><div class="post-meta">👤 Henrique_Schmit · 楼主</div><div class="post-text">I hate seeing teams losing because their robots broke or the sun messed their vision. Because of that, I’d like to share a trick we just came up with that was a nice advantage at this week’s Gotham Regional. Although we have a lot of history in NY, this year was 1156’s first time playing at The Armory. For those unfamiliar with the venue, it keeps teams in contact with nature by allowing us to get</div><div class="post-more">... 还有 400 字</div></div><div class="post-item"><div class="post-meta">👤 Sam948 · #2 · 04-09</div><div class="post-text">Henrique_Schmit: photon should figure out why it takes so long and such an inconsistent amount to change pipelines Could you share some information about the coprocessors you’re running, the version of PV you’re on, the exact cameras you’re using, and the pipelines you were trying to switch?</div></div></div>
         
         <div class="analysis-section">
             <h4>🔍 分析与结论</h4>
@@ -1337,10 +955,10 @@ Do eit…</p>
         
         <div class="detail-section">
             <h4>🔗 原帖链接</h4>
-            <p><a href="https://www.chiefdelphi.com/t/photonvision-and-limelight-clarification/519171" target="_blank" class="link-external">https://www.chiefdelphi.com/t/photonvision-and-limelight-clarification/519171</a></p>
+            <p><a href="https://www.chiefdelphi.com/t/blinded-by-the-sun-no-more-tip-for-gotham-nyc-teams/518219" target="_blank" class="link-external">https://www.chiefdelphi.com/t/blinded-by-the-sun-no-more-tip-for-gotham-nyc-teams/518219</a></p>
         </div>
         
-    <div class="feedback-bar" data-topic-id="519171" data-title="PhotonVision and LimeLight Clarification" data-url="https://www.chiefdelphi.com/t/photonvision-and-limelight-clarification/519171" data-tags="sensor">
+    <div class="feedback-bar" data-topic-id="518219" data-title="Blinded by the sun no more - Tip for Gotham/NYC teams" data-url="https://www.chiefdelphi.com/t/blinded-by-the-sun-no-more-tip-for-gotham-nyc-teams/518219" data-tags="sensor">
         <div class="feedback-options">
             <button class="fb-btn fb-track" onclick="event.stopPropagation(); toggleFeedback(this, 'track')">
                 <span class="fb-icon">🔔</span>
@@ -1394,7 +1012,7 @@ Do eit…</p>
     
     <script>
         // 话题ID到标签的映射
-        const TOPIC_TAGS = {"519044": ["sensor"], "514280": ["motor"], "518940": ["sensor"], "519139": ["sensor"], "519144": ["motor"], "519092": ["motor"], "519142": ["motor"], "519174": ["control"], "519171": ["sensor"]};
+        const TOPIC_TAGS = {"514280": ["motor"], "519109": ["power"], "518219": ["sensor"]};
         
         // ========== 卡片展开/收起 ==========
         function toggleCard(card) {
